@@ -1,0 +1,357 @@
+/* Hero Tiendas */
+.hero-tiendas {
+  background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(45, 55, 72, 0.8)), 
+              url('https://images.unsplash.com/photo-1497436072909-f5e4a9c12d1a?w=1200&h=400&fit=crop') center/cover;
+  padding: 6rem 0;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero-tiendas-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.hero-tiendas-content p {
+  font-size: 1.3rem;
+  color: var(--light-gray);
+}
+
+/* Tiendas Intro */
+.tiendas-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tiendas-intro h2 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--medium-gray);
+}
+
+/* Sucursales Grid */
+.sucursales-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.sucursal-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sucursal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.sucursal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.sucursal-header h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin: 0;
+  flex: 1;
+}
+
+.sucursal-badge {
+  background: var(--accent-color);
+  color: var(--dark-gray);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sucursal-info {
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+
+.info-icon {
+  font-size: 1.2rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.info-item div {
+  flex: 1;
+}
+
+.info-item strong {
+  color: var(--dark-gray);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.info-item p {
+  margin: 0;
+  color: var(--medium-gray);
+  line-height: 1.5;
+}
+
+.info-item a {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.info-item a:hover {
+  color: var(--secondary-color);
+}
+
+.servicios-disponibles {
+  margin-bottom: 2rem;
+}
+
+.servicios-disponibles h4 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.servicios-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.servicio-tag {
+  background: var(--light-gray);
+  color: var(--primary-color);
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.sucursal-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.sucursal-actions .btn {
+  flex: 1;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+
+/* Mapa Coverage */
+.mapa-coverage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.coverage-item {
+  text-align: center;
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.coverage-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.coverage-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.coverage-item p {
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.coverage-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.coverage-item ul li {
+  color: var(--medium-gray);
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.coverage-item ul li:last-child {
+  border-bottom: none;
+}
+
+/* Servicios Completos */
+.servicios-completos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.servicio-completo {
+  text-align: center;
+  color: var(--white);
+}
+
+.servicio-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.servicio-completo h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.servicio-completo p {
+  color: var(--light-gray);
+  line-height: 1.6;
+}
+
+/* Info Especial */
+.info-especial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.info-especial-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-left: 4px solid var(--primary-color);
+}
+
+.info-especial-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.info-especial-card p {
+  color: var(--medium-gray);
+  line-height: 1.6;
+}
+
+/* CTA Tiendas */
+.cta-tiendas h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.cta-tiendas p {
+  font-size: 1.2rem;
+  color: var(--medium-gray);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-actions .btn {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-tiendas-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-tiendas-content p {
+    font-size: 1.1rem;
+  }
+  
+  .tiendas-intro h2 {
+    font-size: 2rem;
+  }
+  
+  .intro-text {
+    font-size: 1.1rem;
+  }
+  
+  .sucursales-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .sucursal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .sucursal-actions {
+    flex-direction: column;
+  }
+  
+  .sucursal-actions .btn {
+    width: 100%;
+  }
+  
+  .mapa-coverage {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .servicios-completos {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .info-especial-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}

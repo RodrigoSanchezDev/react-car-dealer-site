@@ -522,20 +522,49 @@ Utilidades generales:
 
 ## 📸 Capturas de Pantalla
 
-### Página Principal
-Catálogo completo con filtros dinámicos y sistema de búsqueda.
+<div align="center">
 
-### Detalle de Vehículo
-Card interactiva con toda la información relevante del vehículo.
+### 🏠 Página Principal (Home)
+Catálogo completo con filtros dinámicos, estadísticas y call-to-action
 
-### Quiénes Somos
-Presentación institucional con historia, valores y equipo.
+<img src="./src/assets/index.png" alt="Página Principal AutoChile" width="800">
 
-### Nuestras Tiendas
-Mapa de sucursales con información de contacto y servicios.
+---
 
-### Formulario de Contacto
-Sistema de contacto multi-canal con validación.
+### 📍 Nuestras Tiendas
+Mapa de sucursales con información detallada de contacto y servicios disponibles
+
+<img src="./src/assets/nuestras-tiendas.png" alt="Nuestras Tiendas" width="800">
+
+---
+
+### 📞 Contáctanos
+Sistema de contacto multi-canal con formulario interactivo y validación
+
+<img src="./src/assets/contactanos.png" alt="Formulario de Contacto" width="800">
+
+---
+
+### ❓ Preguntas Frecuentes (FAQ)
+Centro de ayuda con categorías organizadas y buscador de preguntas
+
+<img src="./src/assets/faq.png" alt="Preguntas Frecuentes" width="800">
+
+---
+
+### 💰 Calculadora de Financiamiento
+Simulador interactivo de crédito automotriz con cálculo en tiempo real
+
+<img src="./src/assets/calculadora-financiamiento.png" alt="Calculadora de Financiamiento" width="800">
+
+---
+
+### 💻 Servidor de Desarrollo
+Aplicación corriendo en localhost con Vite
+
+<img src="./src/assets/terminal.png" alt="Terminal de Desarrollo" width="800">
+
+</div>
 
 ---
 

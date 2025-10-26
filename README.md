@@ -564,6 +564,13 @@ Aplicación corriendo en localhost con Vite
 
 <img src="./src/assets/terminal.png" alt="Terminal de Desarrollo" width="800">
 
+---
+
+### ⚛️ Implementación de useState
+Código del componente Home.jsx mostrando uso del hook useState para filtros dinámicos
+
+<img src="./src/assets/useState.png" alt="Uso de useState en Home.jsx" width="800">
+
 </div>
 
 ---

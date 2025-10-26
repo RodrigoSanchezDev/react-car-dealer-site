@@ -1,450 +1,898 @@
-<div align="center"><div align="center"><div align="center"># 🚗 AutoChile - React Car Dealer Site
+<div align="center"><div align="center"><div align="center"><div align="center"># 🚗 AutoChile - React Car Dealer Site
 
-  <img src="./src/assets/react.svg" alt="AutoChile Logo" width="80"/>
 
-    <img src="./src/assets/react.svg" alt="AutoChile Logo" width="80"/>
+
+![React](https://img.shields.io/badge/React-19.0.0-61dafb?style=for-the-badge&logo=react)  <img src="./src/assets/react.svg" alt="AutoChile Logo" width="80"/>
+
+![Vite](https://img.shields.io/badge/Vite-7.1.12-646cff?style=for-the-badge&logo=vite)
+
+![React Router](https://img.shields.io/badge/React_Router-7.9.4-ca4245?style=for-the-badge&logo=react-router)    <img src="./src/assets/react.svg" alt="AutoChile Logo" width="80"/>
+
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
   # 🚗 AutoChile - Concesionario Automotriz
 
+# 🚗 AutoChile - React Car Dealer Site
+
       <img src="./src/assets/react.svg" alt="AutoChile Logo" width="80"/>
+
+**Sitio web moderno de concesionario automotriz chileno**
 
   ### *Tu próximo auto te está esperando*
 
+[Ver Demo en Vivo](https://rodrigosanchezdev.github.io/react-car-dealer-site/) • [Reportar Bug](https://github.com/RodrigoSanchezDev/react-car-dealer-site/issues) • [Solicitar Feature](https://github.com/RodrigoSanchezDev/react-car-dealer-site/issues)
+
     # 🚗 AutoChile - Concesionario Automotriz
+
+</div>
 
   [![React](https://img.shields.io/badge/React-19.0.0-61dafb?style=for-the-badge&logo=react)](https://reactjs.org/)
 
+---
+
   [![Vite](https://img.shields.io/badge/Vite-7.1.12-646cff?style=for-the-badge&logo=vite)](https://vitejs.dev/)    Sitio web profesional para concesionario de vehículos desarrollado con React, Vite y React Router. Diseñado específicamente para el mercado chileno con precios en CLP y datos localizados.
+
+## 📋 Tabla de Contenidos
 
   [![React Router](https://img.shields.io/badge/React_Router-7.9.4-ca4245?style=for-the-badge&logo=react-router)](https://reactrouter.com/)
 
-  [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)  ### *Tu próximo auto te está esperando*
+- [Descripción](#-descripción-del-proyecto)
 
-  
+- [Características Principales](#-características-principales)  [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)  ### *Tu próximo auto te está esperando*
 
-  **[Ver Demo en Vivo](https://rodrigosanchezdev.github.io/react-car-dealer-site/)**    # 🚗 AutoChile - Concesionario Automotriz
+- [Capturas de Pantalla](#-capturas-de-pantalla)
 
-  
+- [Tecnologías](#-tecnologías-utilizadas)  
 
-</div>  [![React](https://img.shields.io/badge/React-19.0.0-61dafb?style=for-the-badge&logo=react)](https://reactjs.org/)
+- [Instalación](#-instalación)
 
+- [Estructura del Proyecto](#-estructura-del-proyecto)  **[Ver Demo en Vivo](https://rodrigosanchezdev.github.io/react-car-dealer-site/)**    # 🚗 AutoChile - Concesionario Automotriz
 
+- [Funcionalidades](#-funcionalidades-por-página)
 
----  [![Vite](https://img.shields.io/badge/Vite-7.1.12-646cff?style=for-the-badge&logo=vite)](https://vitejs.dev/)  ## 📋 Descripción del Proyecto
+- [Diseño UI/UX](#-diseño-ui--ux)  
 
+- [Scripts Disponibles](#-scripts-disponibles)
 
-
-## 📋 Tabla de Contenidos  [![React Router](https://img.shields.io/badge/React_Router-7.9.4-ca4245?style=for-the-badge&logo=react-router)](https://reactrouter.com/)
-
-
-
-- [Descripción](#-descripción-del-proyecto)  [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)  ### *Tu próximo auto te está esperando*
-
-- [Características Principales](#-características-principales)
-
-- [Capturas de Pantalla](#-capturas-de-pantalla)  
-
-- [Tecnologías](#-tecnologías-utilizadas)
-
-- [Instalación](#-instalación)  **[Ver Demo](https://rodrigosanchezdev.github.io/react-car-dealer-site/) • [Características](#-características-principales) • [Instalación](#-instalación)**  AutoChile es una aplicación web moderna que simula un concesionario de vehículos en Chile. El proyecto incluye:
-
-- [Estructura del Proyecto](#-estructura-del-proyecto)
-
-- [Funcionalidades](#-funcionalidades-por-página)  
-
-- [Diseño UI/UX](#-diseño-ui--ux)
-
-- [Scripts Disponibles](#-scripts-disponibles)</div>  [![React](https://img.shields.io/badge/React-19.0.0-61dafb?style=for-the-badge&logo=react)](https://reactjs.org/)
-
-- [Datos del Proyecto](#-datos-del-proyecto)
+- [Datos del Proyecto](#-datos-del-proyecto)</div>  [![React](https://img.shields.io/badge/React-19.0.0-61dafb?style=for-the-badge&logo=react)](https://reactjs.org/)
 
 - [Contribución](#-contribución)
 
 - [Licencia](#-licencia)
 
-- [Autor](#-autor)---  [![Vite](https://img.shields.io/badge/Vite-7.1.12-646cff?style=for-the-badge&logo=vite)](https://vitejs.dev/)- **Página Principal (Home)**: Catálogo de vehículos con filtros, hero section y servicios
+- [Autor](#-autor)
 
-
-
----
-
-
-
-## 🎯 Descripción del Proyecto## 📋 Tabla de Contenidos  [![React Router](https://img.shields.io/badge/React_Router-7.9.4-ca4245?style=for-the-badge&logo=react-router)](https://reactrouter.com/)- **Quiénes Somos**: Historia, misión, visión, valores y equipo de la empresa  
-
-
-
-**AutoChile** es una aplicación web moderna y completa que simula el sitio oficial de un concesionario automotriz en Chile. Desarrollada con las últimas tecnologías de React, ofrece una experiencia de usuario fluida y profesional para la búsqueda, consulta y compra de vehículos.
-
-
-
-### ✨ Aspectos Destacados- [Descripción](#-descripción-del-proyecto)  [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)- **Nuestras Tiendas**: Información de sucursales en Chile con datos de contacto
-
-
-
-- 🎨 **Diseño Profesional** - UI/UX elegante con paleta de colores típica de concesionarios premium- [Características Principales](#-características-principales)
-
-- 🇨🇱 **100% Chileno** - Datos localizados con precios en CLP, ubicaciones reales y contenido adaptado
-
-- 📱 **Totalmente Responsive** - Experiencia óptima en móviles, tablets y desktop- [Capturas de Pantalla](#-capturas-de-pantalla)  - **Contáctanos**: Formulario de contacto, canales de comunicación y horarios
-
-- ⚡ **Alto Rendimiento** - Construido con Vite para tiempos de carga ultrarrápidos
-
-- 🎭 **Interactivo** - Filtros, calculadoras, formularios y sistemas de búsqueda en tiempo real- [Tecnologías](#-tecnologías-utilizadas)
-
-
-
----- [Instalación](#-instalación)  **[Demo en Vivo](#) • [Características](#-características-principales) • [Instalación](#-instalación) • [Documentación](#-estructura-del-proyecto)**- **Cómo Comprar**: Proceso de compra en 5 pasos, calculadora de financiamiento y opciones
-
-
-
-## 🚀 Características Principales- [Estructura del Proyecto](#-estructura-del-proyecto)
-
-
-
-<table>- [Funcionalidades](#-funcionalidades-por-página)  - **Preguntas Frecuentes**: FAQ interactivo por categorías con buscador
-
-  <tr>
-
-    <td width="33%" align="center">- [Diseño UI/UX](#-diseño-ui--ux)
-
-      <h3>🔍 Sistema de Filtros</h3>
-
-      <p>Búsqueda avanzada de vehículos por marca, tipo y características específicas</p>- [Scripts](#-scripts-disponibles)</div>
-
-    </td>
-
-    <td width="33%" align="center">- [Datos del Proyecto](#-datos-del-proyecto)
-
-      <h3>💰 Calculadora</h3>
-
-      <p>Simulador de financiamiento en tiempo real con planes personalizados</p>- [Contribución](#-contribución)## 🚀 Tecnologías Utilizadas
-
-    </td>
-
-    <td width="33%" align="center">- [Licencia](#-licencia)
-
-      <h3>📝 Formularios</h3>
-
-      <p>Contacto directo con validación y múltiples canales de comunicación</p>- [Autor](#-autor)---
-
-    </td>
-
-  </tr>
-
-  <tr>
-
-    <td width="33%" align="center">---- **React 19** - Biblioteca de interfaz de usuario
-
-      <h3>❓ FAQ Inteligente</h3>
-
-      <p>Sistema de preguntas frecuentes con búsqueda y categorización</p>
-
-    </td>
-
-    <td width="33%" align="center">## 🎯 Descripción del Proyecto## 📋 Tabla de Contenidos- **Vite** - Herramienta de desarrollo y build
-
-      <h3>🗺️ Geolocalización</h3>
-
-      <p>4 sucursales en Chile con integración a Google Maps</p>
-
-    </td>
-
-    <td width="33%" align="center">**AutoChile** es una aplicación web moderna y completa que simula el sitio oficial de un concesionario automotriz en Chile. Desarrollada con las últimas tecnologías de React, ofrece una experiencia de usuario fluida y profesional para la búsqueda, consulta y compra de vehículos.- **React Router DOM** - Navegación entre páginas
-
-      <h3>🎨 Diseño Premium</h3>
-
-      <p>Animaciones, efectos hover y transiciones suaves</p>
-
-    </td>
-
-  </tr>### ✨ Aspectos Destacados- [Descripción](#-descripción-del-proyecto)- **CSS3** - Diseño responsivo con CSS Variables
-
-</table>
-
-
+---  [![Vite](https://img.shields.io/badge/Vite-7.1.12-646cff?style=for-the-badge&logo=vite)](https://vitejs.dev/)  ## 📋 Descripción del Proyecto
 
 ---
 
-- 🎨 **Diseño Profesional** - UI/UX elegante con paleta de colores típica de concesionarios premium- [Características Principales](#-características-principales)- **ES6+** - JavaScript moderno
 
-## 📸 Capturas de Pantalla
 
-- 🇨🇱 **100% Chileno** - Datos localizados con precios en CLP, ubicaciones reales y contenido adaptado
+## 🎯 Descripción del Proyecto
 
-### 🏠 Página Principal
+## 📋 Tabla de Contenidos  [![React Router](https://img.shields.io/badge/React_Router-7.9.4-ca4245?style=for-the-badge&logo=react-router)](https://reactrouter.com/)
 
-![Home - AutoChile](./src/assets/index.png)- 📱 **Totalmente Responsive** - Experiencia óptima en móviles, tablets y desktop- [Capturas de Pantalla](#-capturas-de-pantalla)
+**AutoChile** es una aplicación web moderna que simula un concesionario de vehículos en Chile. Desarrollada con **React 19**, **Vite** y **React Router**, ofrece una experiencia de usuario fluida y profesional para la búsqueda, consulta y compra de vehículos.
+
+
+
+### ✨ Aspectos Destacados
+
+- [Descripción](#-descripción-del-proyecto)  [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)  ### *Tu próximo auto te está esperando*
+
+- 🎨 **Diseño Profesional** - UI/UX elegante con paleta de colores premium
+
+- 🇨🇱 **100% Chileno** - Datos localizados con precios en CLP y ubicaciones reales- [Características Principales](#-características-principales)
+
+- 📱 **Totalmente Responsive** - Experiencia óptima en móviles, tablets y desktop
+
+- ⚡ **Alto Rendimiento** - Construido con Vite para tiempos de carga ultrarrápidos- [Capturas de Pantalla](#-capturas-de-pantalla)  
+
+- 🎭 **Interactivo** - Filtros, calculadoras, formularios y sistemas de búsqueda en tiempo real
+
+- [Tecnologías](#-tecnologías-utilizadas)
+
+---
+
+- [Instalación](#-instalación)  **[Ver Demo](https://rodrigosanchezdev.github.io/react-car-dealer-site/) • [Características](#-características-principales) • [Instalación](#-instalación)**  AutoChile es una aplicación web moderna que simula un concesionario de vehículos en Chile. El proyecto incluye:
+
+## 🚀 Características Principales
+
+- [Estructura del Proyecto](#-estructura-del-proyecto)
+
+- ✅ **6 Páginas Completas** - Home, Quiénes Somos, Nuestras Tiendas, Contáctanos, Cómo Comprar, Preguntas Frecuentes
+
+- ✅ **Catálogo de Vehículos** - 6 modelos con información detallada y precios en CLP- [Funcionalidades](#-funcionalidades-por-página)  
+
+- ✅ **Sistema de Filtros** - Búsqueda por marca y tipo de vehículo
+
+- ✅ **Calculadora de Financiamiento** - Simulador interactivo de créditos automotrices- [Diseño UI/UX](#-diseño-ui--ux)
+
+- ✅ **Formulario de Contacto** - Validación y categorización de consultas
+
+- ✅ **FAQ Interactivo** - Sistema de preguntas por categorías con accordion- [Scripts Disponibles](#-scripts-disponibles)</div>  [![React](https://img.shields.io/badge/React-19.0.0-61dafb?style=for-the-badge&logo=react)](https://reactjs.org/)
+
+- ✅ **4 Sucursales** - Ubicaciones reales en Chile con integración a Google Maps
+
+- ✅ **Navegación SPA** - React Router para navegación sin recargas- [Datos del Proyecto](#-datos-del-proyecto)
+
+
+
+---- [Contribución](#-contribución)
+
+
+
+## 📸 Capturas de Pantalla- [Licencia](#-licencia)
+
+
+
+### 🏠 Página Principal- [Autor](#-autor)---  [![Vite](https://img.shields.io/badge/Vite-7.1.12-646cff?style=for-the-badge&logo=vite)](https://vitejs.dev/)- **Página Principal (Home)**: Catálogo de vehículos con filtros, hero section y servicios
+
+![Home - AutoChile](./src/assets/index.png)
 
 *Hero section con catálogo de vehículos y sistema de filtros interactivo*
 
-- ⚡ **Alto Rendimiento** - Construido con Vite para tiempos de carga ultrarrápidos
+
+
+------
+
+
 
 ### 🏪 Nuestras Tiendas
 
-![Nuestras Tiendas](./src/assets/nuestras-tiendas.png)- 🎭 **Interactivo** - Filtros, calculadoras, formularios y sistemas de búsqueda en tiempo real- [Tecnologías](#-tecnologías-utilizadas)## 🎨 Características de Diseño
+![Nuestras Tiendas](./src/assets/nuestras-tiendas.png)
 
-*4 sucursales estratégicamente ubicadas desde Santiago hasta Concepción*
+*4 sucursales estratégicamente ubicadas desde Santiago hasta Concepción*## 🎯 Descripción del Proyecto## 📋 Tabla de Contenidos  [![React Router](https://img.shields.io/badge/React_Router-7.9.4-ca4245?style=for-the-badge&logo=react-router)](https://reactrouter.com/)- **Quiénes Somos**: Historia, misión, visión, valores y equipo de la empresa  
 
 
 
-### 📞 Contáctanos
+---
 
-![Contacto](./src/assets/contactanos.png)---- [Instalación](#-instalación)
+
+
+### 📞 Contáctanos**AutoChile** es una aplicación web moderna y completa que simula el sitio oficial de un concesionario automotriz en Chile. Desarrollada con las últimas tecnologías de React, ofrece una experiencia de usuario fluida y profesional para la búsqueda, consulta y compra de vehículos.
+
+![Contacto](./src/assets/contactanos.png)
 
 *Formulario de contacto completo con múltiples canales de comunicación*
 
 
 
+---### ✨ Aspectos Destacados- [Descripción](#-descripción-del-proyecto)  [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)- **Nuestras Tiendas**: Información de sucursales en Chile con datos de contacto
+
+
+
 ### 💳 Calculadora de Financiamiento
 
-![Calculadora](./src/assets/calculadora-financiamiento.png)## 🚀 Características Principales- [Estructura del Proyecto](#-estructura-del-proyecto)### Paleta de Colores
+![Calculadora](./src/assets/calculadora-financiamiento.png)
 
-*Simulador interactivo con cálculo en tiempo real de cuotas mensuales*
+*Simulador interactivo con cálculo en tiempo real de cuotas mensuales*- 🎨 **Diseño Profesional** - UI/UX elegante con paleta de colores típica de concesionarios premium- [Características Principales](#-características-principales)
 
 
 
-### ❓ Preguntas Frecuentes
+---- 🇨🇱 **100% Chileno** - Datos localizados con precios en CLP, ubicaciones reales y contenido adaptado
 
-![FAQ](./src/assets/faq.png)<table>- [Funcionalidades](#-funcionalidades-por-página)- **Primario**: #1a365d (Azul marino elegante)
 
-*Sistema de FAQ categorizado con búsqueda y acordeón interactivo*
 
-  <tr>
+### ❓ Preguntas Frecuentes- 📱 **Totalmente Responsive** - Experiencia óptima en móviles, tablets y desktop- [Capturas de Pantalla](#-capturas-de-pantalla)  - **Contáctanos**: Formulario de contacto, canales de comunicación y horarios
 
----
+![FAQ](./src/assets/faq.png)
 
-    <td width="33%" align="center">- [Diseño](#-diseño-ui--ux)- **Secundario**: #c53030 (Rojo chileno)
+*Sistema de FAQ categorizado con búsqueda y acordeón interactivo*- ⚡ **Alto Rendimiento** - Construido con Vite para tiempos de carga ultrarrápidos
+
+
+
+---- 🎭 **Interactivo** - Filtros, calculadoras, formularios y sistemas de búsqueda en tiempo real- [Tecnologías](#-tecnologías-utilizadas)
+
+
 
 ## 🛠️ Tecnologías Utilizadas
 
-      <h3>🔍 Sistema de Filtros</h3>
 
-### Frontend Framework & Libraries
 
-      <p>Búsqueda avanzada de vehículos por marca, tipo y características específicas</p>- [Scripts](#-scripts-disponibles)- **Acento**: #ffd700 (Dorado premium)
+### Frontend Framework & Libraries---- [Instalación](#-instalación)  **[Demo en Vivo](#) • [Características](#-características-principales) • [Instalación](#-instalación) • [Documentación](#-estructura-del-proyecto)**- **Cómo Comprar**: Proceso de compra en 5 pasos, calculadora de financiamiento y opciones
 
-```json
 
-{    </td>
 
-  "react": "^19.0.0",
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-f7df1e?style=for-the-badge&logo=javascript&logoColor=black)
 
-  "react-dom": "^19.0.0",    <td width="33%" align="center">- [Datos del Proyecto](#-datos-del-proyecto)- **Neutros**: Escala de grises profesional
+![React](https://img.shields.io/badge/React-19.0.0-61dafb?style=for-the-badge&logo=react&logoColor=black)
 
-  "react-router-dom": "^7.9.4"
+![React Router](https://img.shields.io/badge/React_Router-7.9.4-ca4245?style=for-the-badge&logo=react-router&logoColor=white)## 🚀 Características Principales- [Estructura del Proyecto](#-estructura-del-proyecto)
 
-}      <h3>💰 Calculadora</h3>
 
-```
-
-      <p>Simulador de financiamiento en tiempo real con planes personalizados</p>- [Contribución](#-contribución)
 
 ### Build Tools & Development
 
-    </td>
-
-```json
-
-{    <td width="33%" align="center">- [Licencia](#-licencia)### Tipografía
-
-  "vite": "^7.1.12",
-
-  "@vitejs/plugin-react": "^4.3.4"      <h3>📝 Formularios</h3>
-
-}
-
-```      <p>Contacto directo con validación y múltiples canales de comunicación</p>- Font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 
 
+![Vite](https://img.shields.io/badge/Vite-7.1.12-646cff?style=for-the-badge&logo=vite&logoColor=white)<table>- [Funcionalidades](#-funcionalidades-por-página)  - **Preguntas Frecuentes**: FAQ interactivo por categorías con buscador
 
-### Lenguajes & Estilos    </td>
+![ESLint](https://img.shields.io/badge/ESLint-8.x-4b32c3?style=for-the-badge&logo=eslint&logoColor=white)
+
+  <tr>
+
+### Lenguajes & Estilos
+
+    <td width="33%" align="center">- [Diseño UI/UX](#-diseño-ui--ux)
+
+![HTML5](https://img.shields.io/badge/HTML5-Semántico-e34f26?style=for-the-badge&logo=html5&logoColor=white)
+
+![CSS3](https://img.shields.io/badge/CSS3-Variables-1572b6?style=for-the-badge&logo=css3&logoColor=white)      <h3>🔍 Sistema de Filtros</h3>
 
 
 
-- **JavaScript ES6+** - Lógica moderna y funcional  </tr>---- Jerarquía tipográfica clara
-
-- **CSS3** - Variables CSS, Grid, Flexbox
-
-- **HTML5** - Semántica moderna  <tr>
+### Características Técnicas      <p>Búsqueda avanzada de vehículos por marca, tipo y características específicas</p>- [Scripts](#-scripts-disponibles)</div>
 
 
 
-### Características Técnicas    <td width="33%" align="center">- Tamaños responsivos
-
-
-
-- ⚛️ **React Hooks** - useState para manejo de estado      <h3>❓ FAQ Inteligente</h3>
+- ⚛️ **React Hooks** - useState para manejo de estado    </td>
 
 - 🎯 **React Router** - Navegación SPA sin recargas
 
-- 🎨 **CSS Variables** - Estilos modulares y mantenibles      <p>Sistema de preguntas frecuentes con búsqueda y categorización</p>## 🎯 Descripción del Proyecto
+- 🎨 **CSS Variables** - Estilos modulares y mantenibles    <td width="33%" align="center">- [Datos del Proyecto](#-datos-del-proyecto)
 
 - 📦 **Vite HMR** - Hot Module Replacement para desarrollo rápido
 
-- 🔧 **ESLint** - Código limpio y consistente    </td>
+- 🔧 **ESLint** - Código limpio y consistente      <h3>💰 Calculadora</h3>
 
 
 
----    <td width="33%" align="center">### UX/UI
+---      <p>Simulador de financiamiento en tiempo real con planes personalizados</p>- [Contribución](#-contribución)## 🚀 Tecnologías Utilizadas
 
 
 
-## 📦 Instalación      <h3>🗺️ Geolocalización</h3>
+## 📦 Instalación    </td>
 
 
 
-### Prerrequisitos      <p>4 sucursales en Chile con integración a Google Maps</p>**AutoChile** es una aplicación web moderna y completa que simula el sitio oficial de un concesionario automotriz en Chile. Desarrollada con las últimas tecnologías de React, ofrece una experiencia de usuario fluida y profesional para la búsqueda, consulta y compra de vehículos.- Diseño responsivo mobile-first
+### Prerrequisitos    <td width="33%" align="center">- [Licencia](#-licencia)
 
 
 
-Asegúrate de tener instalado:    </td>
+Asegúrate de tener instalado:      <h3>📝 Formularios</h3>
 
 
 
-- **Node.js** (v14 o superior) - [Descargar](https://nodejs.org/)    <td width="33%" align="center">- Animaciones suaves y transiciones
+- **Node.js** (v14 o superior) - [Descargar](https://nodejs.org/)      <p>Contacto directo con validación y múltiples canales de comunicación</p>- [Autor](#-autor)---
 
 - **npm** (v6 o superior) o **yarn** (v1.22 o superior)
 
-      <h3>🎨 Diseño Premium</h3>
+    </td>
 
 ### Pasos de Instalación
 
-      <p>Animaciones, efectos hover y transiciones suaves</p>### ✨ Aspectos Destacados- Cards con hover effects
+  </tr>
 
 **1️⃣ Clonar el repositorio**
 
-    </td>
+  <tr>
 
 ```bash
 
-git clone https://github.com/RodrigoSanchezDev/react-car-dealer-site.git  </tr>- Navegación intuitiva
+git clone https://github.com/RodrigoSanchezDev/react-car-dealer-site.git    <td width="33%" align="center">---- **React 19** - Biblioteca de interfaz de usuario
 
 cd react-car-dealer-site
 
-```</table>
+```      <h3>❓ FAQ Inteligente</h3>
 
 
 
-**2️⃣ Instalar dependencias**- 🎨 **Diseño Profesional** - UI/UX elegante con paleta de colores típica de concesionarios premium- Call-to-actions destacados
+**2️⃣ Instalar dependencias**      <p>Sistema de preguntas frecuentes con búsqueda y categorización</p>
 
 
 
-```bash---
+```bash    </td>
 
 npm install
 
-```- 🇨🇱 **100% Chileno** - Datos localizados con precios en CLP, ubicaciones reales y contenido adaptado
+```    <td width="33%" align="center">## 🎯 Descripción del Proyecto## 📋 Tabla de Contenidos- **Vite** - Herramienta de desarrollo y build
 
 
 
-**3️⃣ Iniciar servidor de desarrollo**## 📸 Capturas de Pantalla
+**3️⃣ Iniciar servidor de desarrollo**      <h3>🗺️ Geolocalización</h3>
 
 
 
-```bash- 📱 **Totalmente Responsive** - Experiencia óptima en móviles, tablets y desktop## 📊 Datos Incluidos
+```bash      <p>4 sucursales en Chile con integración a Google Maps</p>
 
 npm run dev
 
-```### 🏠 Página Principal
+```    </td>
 
 
 
-**4️⃣ Abrir en el navegador**![Home - AutoChile](./src/assets/index.png)- ⚡ **Alto Rendimiento** - Construido con Vite para tiempos de carga ultrarrápidos
+**4️⃣ Abrir en el navegador**    <td width="33%" align="center">**AutoChile** es una aplicación web moderna y completa que simula el sitio oficial de un concesionario automotriz en Chile. Desarrollada con las últimas tecnologías de React, ofrece una experiencia de usuario fluida y profesional para la búsqueda, consulta y compra de vehículos.- **React Router DOM** - Navegación entre páginas
 
 
 
-```*Hero section con catálogo de vehículos y sistema de filtros interactivo*
+```      <h3>🎨 Diseño Premium</h3>
 
 🌐 http://localhost:5173
 
-```- 🎭 **Interactivo** - Filtros, calculadoras, formularios y sistemas de búsqueda en tiempo real### Vehículos (6 modelos)
+```      <p>Animaciones, efectos hover y transiciones suaves</p>
 
 
 
-El servidor se recargará automáticamente al guardar cambios.---
+El servidor se recargará automáticamente al guardar cambios.    </td>
 
 
 
-### Build para Producción- Toyota Corolla Híbrido 2024
+### Build para Producción  </tr>### ✨ Aspectos Destacados- [Descripción](#-descripción-del-proyecto)- **CSS3** - Diseño responsivo con CSS Variables
 
 
 
-```bash### 🏪 Nuestras Tiendas
+```bash</table>
 
 npm run build
 
-npm run preview![Nuestras Tiendas](./src/assets/nuestras-tiendas.png)---- Chevrolet Tracker 2024
+npm run preview
 
 ```
 
-*4 sucursales estratégicamente ubicadas desde Santiago hasta Concepción*
+---
 
 Los archivos optimizados se generarán en la carpeta `/dist`.
 
-- Nissan Kicks 2023
+- 🎨 **Diseño Profesional** - UI/UX elegante con paleta de colores típica de concesionarios premium- [Características Principales](#-características-principales)- **ES6+** - JavaScript moderno
 
 ---
 
----
+## 📸 Capturas de Pantalla
 
 ## 📁 Estructura del Proyecto
 
-## 🚀 Características Principales- Suzuki Vitara 4x4 2024
+- 🇨🇱 **100% Chileno** - Datos localizados con precios en CLP, ubicaciones reales y contenido adaptado
 
 ```
 
-react-car-dealer-site/### 📞 Contáctanos
+react-car-dealer-site/### 🏠 Página Principal
 
 │
 
-├── 📂 public/![Contacto](./src/assets/contactanos.png)- Hyundai Tucson 2024
+├── 📂 public/                      # Archivos públicos estáticos![Home - AutoChile](./src/assets/index.png)- 📱 **Totalmente Responsive** - Experiencia óptima en móviles, tablets y desktop- [Capturas de Pantalla](#-capturas-de-pantalla)
 
 │
 
-├── 📂 src/*Formulario de contacto completo con múltiples canales de comunicación*
+├── 📂 src/*Hero section con catálogo de vehículos y sistema de filtros interactivo*
 
-│   ├── 📂 assets/
+│   ├── 📂 assets/                  # Recursos (imágenes, capturas)
 
-│   │   ├── index.png<table>- Ford Territory 2023
+│   │   ├── index.png- ⚡ **Alto Rendimiento** - Construido con Vite para tiempos de carga ultrarrápidos
 
 │   │   ├── contactanos.png
 
-│   │   ├── faq.png---
+│   │   ├── faq.png### 🏪 Nuestras Tiendas
 
 │   │   ├── calculadora-financiamiento.png
 
-│   │   ├── nuestras-tiendas.png  <tr>
+│   │   ├── nuestras-tiendas.png![Nuestras Tiendas](./src/assets/nuestras-tiendas.png)- 🎭 **Interactivo** - Filtros, calculadoras, formularios y sistemas de búsqueda en tiempo real- [Tecnologías](#-tecnologías-utilizadas)## 🎨 Características de Diseño
 
 │   │   └── react.svg
 
-│   │### 💳 Calculadora de Financiamiento
+│   │*4 sucursales estratégicamente ubicadas desde Santiago hasta Concepción*
 
-│   ├── 📂 components/
+│   ├── 📂 components/              # Componentes reutilizables
 
-│   │   ├── Header.jsx![Calculadora](./src/assets/calculadora-financiamiento.png)    <td width="33%" align="center">### Sucursales (4 ubicaciones)
+│   │   ├── Header.jsx              # Navegación principal
 
 │   │   ├── Header.css
 
-│   │   ├── Footer.jsx*Simulador interactivo con cálculo en tiempo real de cuotas mensuales*
+│   │   ├── Footer.jsx              # Pie de página### 📞 Contáctanos
 
 │   │   ├── Footer.css
 
-│   │   ├── VehiculoCard.jsx      <h3>🔍 Sistema de Filtros</h3>- Santiago Centro (Providencia)
+│   │   ├── VehiculoCard.jsx        # Card de vehículo![Contacto](./src/assets/contactanos.png)---- [Instalación](#-instalación)
 
 │   │   └── VehiculoCard.css
 
-│   │---
+│   │*Formulario de contacto completo con múltiples canales de comunicación*
 
-│   ├── 📂 pages/
+│   ├── 📂 pages/                   # Páginas de la aplicación
 
-│   │   ├── Home.jsx      <p>Búsqueda avanzada de vehículos por marca, tipo y características específicas</p>- Las Condes
+│   │   ├── Home.jsx                # Página principal
 
 │   │   ├── Home.css
 
-│   │   ├── QuienesSomos.jsx### ❓ Preguntas Frecuentes
+│   │   ├── QuienesSomos.jsx        # Sobre la empresa### 💳 Calculadora de Financiamiento
 
 │   │   ├── QuienesSomos.css
+
+│   │   ├── NuestrasTiendas.jsx     # Sucursales![Calculadora](./src/assets/calculadora-financiamiento.png)## 🚀 Características Principales- [Estructura del Proyecto](#-estructura-del-proyecto)### Paleta de Colores
+
+│   │   ├── NuestrasTiendas.css
+
+│   │   ├── Contactanos.jsx         # Contacto*Simulador interactivo con cálculo en tiempo real de cuotas mensuales*
+
+│   │   ├── Contactanos.css
+
+│   │   ├── ComoComprar.jsx         # Guía de compra
+
+│   │   ├── ComoComprar.css
+
+│   │   ├── PreguntasFrecuentes.jsx # FAQ### ❓ Preguntas Frecuentes
+
+│   │   └── PreguntasFrecuentes.css
+
+│   │![FAQ](./src/assets/faq.png)<table>- [Funcionalidades](#-funcionalidades-por-página)- **Primario**: #1a365d (Azul marino elegante)
+
+│   ├── 📂 data/                    # Datos de la aplicación
+
+│   │   └── vehiculos.js            # Vehículos y sucursales*Sistema de FAQ categorizado con búsqueda y acordeón interactivo*
+
+│   │
+
+│   ├── App.jsx                     # Componente principal  <tr>
+
+│   ├── App.css                     # Estilos globales
+
+│   ├── main.jsx                    # Punto de entrada---
+
+│   └── index.css                   # Reset CSS
+
+│    <td width="33%" align="center">- [Diseño](#-diseño-ui--ux)- **Secundario**: #c53030 (Rojo chileno)
+
+├── 📂 .github/
+
+│   └── workflows/## 🛠️ Tecnologías Utilizadas
+
+│       └── deploy.yml              # GitHub Actions para deploy
+
+│      <h3>🔍 Sistema de Filtros</h3>
+
+├── index.html                      # HTML principal
+
+├── package.json                    # Dependencias### Frontend Framework & Libraries
+
+├── vite.config.js                  # Configuración Vite
+
+├── LICENSE                         # Licencia MIT      <p>Búsqueda avanzada de vehículos por marca, tipo y características específicas</p>- [Scripts](#-scripts-disponibles)- **Acento**: #ffd700 (Dorado premium)
+
+└── README.md                       # Este archivo
+
+``````json
+
+
+
+---{    </td>
+
+
+
+## 🌟 Funcionalidades por Página  "react": "^19.0.0",
+
+
+
+### 🏠 Home (`/`)  "react-dom": "^19.0.0",    <td width="33%" align="center">- [Datos del Proyecto](#-datos-del-proyecto)- **Neutros**: Escala de grises profesional
+
+
+
+- ✅ Hero section con imagen de fondo profesional y oscurecimiento  "react-router-dom": "^7.9.4"
+
+- ✅ Estadísticas destacadas (15+ años, 5,000+ clientes)
+
+- ✅ **Sistema de filtros** por marca y tipo de vehículo}      <h3>💰 Calculadora</h3>
+
+- ✅ **Catálogo de 6 vehículos** con cards interactivas
+
+- ✅ Información detallada: precio (CLP), características, ubicación```
+
+- ✅ Sección de servicios destacados
+
+- ✅ Call-to-actions con enlaces a teléfono y WhatsApp      <p>Simulador de financiamiento en tiempo real con planes personalizados</p>- [Contribución](#-contribución)
+
+
+
+**Tecnologías:** useState, filtrado dinámico, grid responsive### Build Tools & Development
+
+
+
+---    </td>
+
+
+
+### 👥 Quiénes Somos (`/quienes-somos`)```json
+
+
+
+- ✅ Historia completa de AutoChile (fundada en 2009){    <td width="33%" align="center">- [Licencia](#-licencia)### Tipografía
+
+- ✅ Misión, visión y valores corporativos
+
+- ✅ **Equipo directivo** con fotos y biografías profesionales  "vite": "^7.1.12",
+
+- ✅ Logros y certificaciones (Premio Excelencia 2023)
+
+- ✅ Compromiso social y programas comunitarios  "@vitejs/plugin-react": "^4.3.4"      <h3>📝 Formularios</h3>
+
+
+
+**Tecnologías:** CSS Grid, sections semánticas}
+
+
+
+---```      <p>Contacto directo con validación y múltiples canales de comunicación</p>- Font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+
+
+### 🏪 Nuestras Tiendas (`/nuestras-tiendas`)
+
+
+
+- ✅ **4 sucursales** en Chile (Santiago Centro, Las Condes, Valparaíso, Concepción)### Lenguajes & Estilos    </td>
+
+- ✅ Información completa: dirección, teléfono, horarios, gerente
+
+- ✅ **Servicios por sucursal** (Venta, Post-venta, Financiamiento, Seguros)
+
+- ✅ Enlaces directos a **Google Maps** y llamadas telefónicas
+
+- ✅ Cobertura nacional por regiones- **JavaScript ES6+** - Lógica moderna y funcional  </tr>---- Jerarquía tipográfica clara
+
+
+
+**Tecnologías:** Grid layout, enlaces externos, datos dinámicos- **CSS3** - Variables CSS, Grid, Flexbox
+
+
+
+---- **HTML5** - Semántica moderna  <tr>
+
+
+
+### 📞 Contáctanos (`/contactanos`)
+
+
+
+- ✅ **Formulario de contacto** completo con validación### Características Técnicas    <td width="33%" align="center">- Tamaños responsivos
+
+- ✅ Campos: nombre, email, teléfono, tipo de consulta, vehículo, mensaje
+
+- ✅ **4 canales de comunicación**: Teléfono, WhatsApp, Email, Visita
+
+- ✅ Horarios detallados por tipo de servicio
+
+- ✅ FAQ rápidas integradas- ⚛️ **React Hooks** - useState para manejo de estado      <h3>❓ FAQ Inteligente</h3>
+
+
+
+**Tecnologías:** useState, validación de formularios, preventDefault- 🎯 **React Router** - Navegación SPA sin recargas
+
+
+
+---- 🎨 **CSS Variables** - Estilos modulares y mantenibles      <p>Sistema de preguntas frecuentes con búsqueda y categorización</p>## 🎯 Descripción del Proyecto
+
+
+
+### 💰 Cómo Comprar (`/como-comprar`)- 📦 **Vite HMR** - Hot Module Replacement para desarrollo rápido
+
+
+
+- ✅ **Proceso de compra en 5 pasos** visual y detallado- 🔧 **ESLint** - Código limpio y consistente    </td>
+
+- ✅ **Calculadora de financiamiento interactiva**:
+
+  - Sliders para precio, pie, número de cuotas, tasa
+
+  - Cálculo automático en tiempo real
+
+  - Resumen completo del crédito---    <td width="33%" align="center">### UX/UI
+
+- ✅ **3 opciones de financiamiento** explicadas
+
+- ✅ **Documentación requerida** por tipo de cliente
+
+- ✅ **6 beneficios incluidos** con cada compra
+
+## 📦 Instalación      <h3>🗺️ Geolocalización</h3>
+
+**Tecnologías:** useState, cálculos dinámicos, range inputs
+
+
+
+---
+
+### Prerrequisitos      <p>4 sucursales en Chile con integración a Google Maps</p>**AutoChile** es una aplicación web moderna y completa que simula el sitio oficial de un concesionario automotriz en Chile. Desarrollada con las últimas tecnologías de React, ofrece una experiencia de usuario fluida y profesional para la búsqueda, consulta y compra de vehículos.- Diseño responsivo mobile-first
+
+### ❓ Preguntas Frecuentes (`/preguntas-frecuentes`)
+
+
+
+- ✅ **Buscador en tiempo real** de preguntas
+
+- ✅ **5 categorías**: General, Financiamiento, Vehículos, Servicio, LegalAsegúrate de tener instalado:    </td>
+
+- ✅ **Sistema accordion** expandible/colapsable
+
+- ✅ **25+ preguntas** con respuestas detalladas
+
+- ✅ Estadísticas de ayuda (95% consultas resueltas)
+
+- ✅ Tips útiles antes de comprar- **Node.js** (v14 o superior) - [Descargar](https://nodejs.org/)    <td width="33%" align="center">- Animaciones suaves y transiciones
+
+
+
+**Tecnologías:** useState, filtrado de búsqueda, accordion pattern- **npm** (v6 o superior) o **yarn** (v1.22 o superior)
+
+
+
+---      <h3>🎨 Diseño Premium</h3>
+
+
+
+## 🎨 Diseño UI / UX### Pasos de Instalación
+
+
+
+### Paleta de Colores      <p>Animaciones, efectos hover y transiciones suaves</p>### ✨ Aspectos Destacados- Cards con hover effects
+
+
+
+```css**1️⃣ Clonar el repositorio**
+
+:root {
+
+  --primary-color: #1a365d;    /* Azul Marino Elegante */    </td>
+
+  --secondary-color: #c53030;  /* Rojo Chileno */
+
+  --accent-color: #ffd700;     /* Dorado Premium */```bash
+
+  --dark-gray: #2d3748;
+
+  --medium-gray: #718096;git clone https://github.com/RodrigoSanchezDev/react-car-dealer-site.git  </tr>- Navegación intuitiva
+
+  --light-gray: #e2e8f0;
+
+  --background: #f7fafc;cd react-car-dealer-site
+
+  --white: #ffffff;
+
+}```</table>
+
+```
+
+
+
+### Tipografía
+
+**2️⃣ Instalar dependencias**- 🎨 **Diseño Profesional** - UI/UX elegante con paleta de colores típica de concesionarios premium- Call-to-actions destacados
+
+- **Font Family:** System fonts (San Francisco, Segoe UI, Roboto)
+
+- **Headings:** 700 weight, letter-spacing optimizado
+
+- **Body:** 400 weight, line-height 1.6
+
+```bash---
+
+### Responsive Breakpoints
+
+npm install
+
+| Dispositivo | Breakpoint | Layout |
+
+|-------------|------------|--------|```- 🇨🇱 **100% Chileno** - Datos localizados con precios en CLP, ubicaciones reales y contenido adaptado
+
+| 📱 Mobile   | < 768px    | 1 columna |
+
+| 💻 Tablet   | 768px - 1024px | 2 columnas |
+
+| 🖥️ Desktop  | > 1024px   | 3+ columnas |
+
+**3️⃣ Iniciar servidor de desarrollo**## 📸 Capturas de Pantalla
+
+### Características de Diseño
+
+
+
+- ✨ **Animaciones suaves** - Transiciones de 0.3s
+
+- 🎭 **Efectos hover** - Elevación y cambio de color```bash- 📱 **Totalmente Responsive** - Experiencia óptima en móviles, tablets y desktop## 📊 Datos Incluidos
+
+- 📐 **Grid System** - Auto-fit responsive
+
+- 🌈 **Gradientes** - Overlay en heros y botonesnpm run dev
+
+- 🔘 **Botones CTA** - Gradientes y sombras
+
+- 📦 **Cards** - Border-radius, box-shadow```### 🏠 Página Principal
+
+
+
+---
+
+
+
+## 🎮 Scripts Disponibles**4️⃣ Abrir en el navegador**![Home - AutoChile](./src/assets/index.png)- ⚡ **Alto Rendimiento** - Construido con Vite para tiempos de carga ultrarrápidos
+
+
+
+| Script | Comando | Descripción |
+
+|--------|---------|-------------|
+
+| **Dev** | `npm run dev` | Inicia servidor de desarrollo con HMR |```*Hero section con catálogo de vehículos y sistema de filtros interactivo*
+
+| **Build** | `npm run build` | Compila para producción (optimizado) |
+
+| **Preview** | `npm run preview` | Vista previa del build de producción |🌐 http://localhost:5173
+
+| **Lint** | `npm run lint` | Ejecuta ESLint para verificar código |
+
+```- 🎭 **Interactivo** - Filtros, calculadoras, formularios y sistemas de búsqueda en tiempo real### Vehículos (6 modelos)
+
+---
+
+
+
+## 📊 Datos del Proyecto
+
+El servidor se recargará automáticamente al guardar cambios.---
+
+### 🚙 Catálogo de Vehículos (6 unidades)
+
+
+
+| Marca | Modelo | Año | Precio (CLP) | Tipo |
+
+|-------|--------|-----|--------------|------|### Build para Producción- Toyota Corolla Híbrido 2024
+
+| Toyota | Corolla | 2024 | $16.900.000 | Sedán Híbrido |
+
+| Chevrolet | Tracker | 2024 | $18.500.000 | SUV |
+
+| Nissan | Kicks | 2023 | $15.200.000 | Crossover |
+
+| Suzuki | Vitara | 2024 | $17.800.000 | SUV 4x4 |```bash### 🏪 Nuestras Tiendas
+
+| Hyundai | Tucson | 2024 | $24.900.000 | SUV Premium |
+
+| Ford | Territory | 2023 | $19.900.000 | SUV |npm run build
+
+
+
+### 🏪 Sucursales (4 ubicaciones)npm run preview![Nuestras Tiendas](./src/assets/nuestras-tiendas.png)---- Chevrolet Tracker 2024
+
+
+
+- **Santiago Centro** - Av. Providencia 1234, Providencia```
+
+- **Las Condes** - Av. Apoquindo 4567, Las Condes
+
+- **Valparaíso** - Av. Brasil 890, Valparaíso*4 sucursales estratégicamente ubicadas desde Santiago hasta Concepción*
+
+- **Concepción** - Av. O'Higgins 1567, Concepción
+
+Los archivos optimizados se generarán en la carpeta `/dist`.
+
+### 📈 Estadísticas
+
+- Nissan Kicks 2023
+
+- ⏰ **15+ años** de experiencia
+
+- 😊 **5,000+ clientes** satisfechos---
+
+- 🚗 **10 marcas** disponibles
+
+- 🏢 **4 sucursales** en Chile---
+
+- ⭐ **95%** de consultas resueltas
+
+- 🔧 **24/7** asistencia de emergencia## 📁 Estructura del Proyecto
+
+
+
+---## 🚀 Características Principales- Suzuki Vitara 4x4 2024
+
+
+
+## 🤝 Contribución```
+
+
+
+¡Las contribuciones son bienvenidas! Si deseas mejorar este proyecto:react-car-dealer-site/### 📞 Contáctanos
+
+
+
+1. **Fork** el proyecto│
+
+2. Crea tu **Feature Branch** (`git checkout -b feature/AmazingFeature`)
+
+3. **Commit** tus cambios (`git commit -m 'Add: nueva característica increíble'`)├── 📂 public/![Contacto](./src/assets/contactanos.png)- Hyundai Tucson 2024
+
+4. **Push** a la rama (`git push origin feature/AmazingFeature`)
+
+5. Abre un **Pull Request**│
+
+
+
+### Guía de Contribución├── 📂 src/*Formulario de contacto completo con múltiples canales de comunicación*
+
+
+
+- 📝 Usa mensajes de commit descriptivos│   ├── 📂 assets/
+
+- ✅ Asegúrate de que el código pase el linter
+
+- 🧪 Prueba tus cambios antes de hacer PR│   │   ├── index.png<table>- Ford Territory 2023
+
+- 📚 Actualiza la documentación si es necesario
+
+│   │   ├── contactanos.png
+
+---
+
+│   │   ├── faq.png---
+
+## 📄 Licencia
+
+│   │   ├── calculadora-financiamiento.png
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
+
+│   │   ├── nuestras-tiendas.png  <tr>
+
+```
+
+MIT License - Libre para usar, modificar y distribuir│   │   └── react.svg
+
+```
+
+│   │### 💳 Calculadora de Financiamiento
+
+---
+
+│   ├── 📂 components/
+
+## 👨‍💻 Autor
+
+│   │   ├── Header.jsx![Calculadora](./src/assets/calculadora-financiamiento.png)    <td width="33%" align="center">### Sucursales (4 ubicaciones)
+
+<div align="center">
+
+│   │   ├── Header.css
+
+**Rodrigo Sanchez**
+
+│   │   ├── Footer.jsx*Simulador interactivo con cálculo en tiempo real de cuotas mensuales*
+
+Full Stack Developer
+
+│   │   ├── Footer.css
+
+[![Website](https://img.shields.io/badge/Website-sanchezdev.com-blue?style=for-the-badge&logo=google-chrome)](https://sanchezdev.com)
+
+[![Email](https://img.shields.io/badge/Email-rodrigo@sanchezdev.com-red?style=for-the-badge&logo=gmail)](mailto:rodrigo@sanchezdev.com)│   │   ├── VehiculoCard.jsx      <h3>🔍 Sistema de Filtros</h3>- Santiago Centro (Providencia)
+
+[![GitHub](https://img.shields.io/badge/GitHub-RodrigoSanchezDev-black?style=for-the-badge&logo=github)](https://github.com/RodrigoSanchezDev)
+
+│   │   └── VehiculoCard.css
+
+---
+
+│   │---
+
+**Desarrollado con ❤️ y ☕ para AutoChile**
+
+│   ├── 📂 pages/
+
+Si este proyecto te fue útil, ¡considera darle una ⭐ en GitHub!
+
+│   │   ├── Home.jsx      <p>Búsqueda avanzada de vehículos por marca, tipo y características específicas</p>- Las Condes
+
+---
+
+│   │   ├── Home.css
+
+### 🔗 Links Útiles
+
+│   │   ├── QuienesSomos.jsx### ❓ Preguntas Frecuentes
+
+[Documentación React](https://react.dev/) • [Vite Docs](https://vitejs.dev/) • [React Router](https://reactrouter.com/)
+
+│   │   ├── QuienesSomos.css
+
+</div>
 
 │   │   ├── NuestrasTiendas.jsx![FAQ](./src/assets/faq.png)    </td>- Valparaíso
 

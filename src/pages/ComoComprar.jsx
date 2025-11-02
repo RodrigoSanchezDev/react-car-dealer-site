@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { formatearPrecio } from '../data/vehiculos';
-import './ComoComprar.css';
 
 const ComoComprar = () => {
   const [calculadora, setCalculadora] = useState({
@@ -27,32 +26,32 @@ const ComoComprar = () => {
   };
 
   return (
-    <div className="como-comprar">
+    <div className="w-full">
       {/* Hero Section */}
-      <section className="hero-comprar">
-        <div className="container">
-          <div className="hero-comprar-content">
-            <h1>Cómo Comprar Tu Auto</h1>
-            <p>Proceso simple y transparente en 5 pasos</p>
+      <section className="bg-gradient-to-br from-[#1a365d] to-[#2d3748] text-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-4 text-white">Cómo Comprar Tu Auto</h1>
+            <p className="text-xl text-gray-200">Proceso simple y transparente en 5 pasos</p>
           </div>
         </div>
       </section>
 
       {/* Proceso de Compra */}
-      <section className="section">
-        <div className="container">
-          <h2 className="text-center">Tu Nuevo Auto en 5 Simples Pasos</h2>
-          <div className="proceso-compra">
-            <div className="paso-item">
-              <div className="paso-numero">1</div>
-              <div className="paso-content">
-                <h3>🔍 Explora y Elige</h3>
-                <p>
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-[#1a365d] mb-8">Tu Nuevo Auto en 5 Simples Pasos</h2>
+          <div className="space-y-8 mt-12">
+            <div className="bg-white p-8 rounded-xl shadow-md flex gap-6 hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 rounded-full bg-[#1a365d] text-white flex items-center justify-center text-2xl font-bold flex-shrink-0">1</div>
+              <div>
+                <h3 className="text-2xl font-bold text-[#1a365d] mb-3">🔍 Explora y Elige</h3>
+                <p className="text-gray-600 mb-4">
                   Navega por nuestro catálogo online o visita nuestro showroom. 
                   Usa nuestros filtros para encontrar el vehículo perfecto según 
                   tu presupuesto, marca y necesidades.
                 </p>
-                <ul>
+                <ul className="list-disc list-inside space-y-2 text-gray-600">
                   <li>Catálogo online actualizado</li>
                   <li>Test drive disponible</li>
                   <li>Asesoría personalizada</li>
@@ -61,16 +60,16 @@ const ComoComprar = () => {
               </div>
             </div>
 
-            <div className="paso-item">
-              <div className="paso-numero">2</div>
-              <div className="paso-content">
-                <h3>💰 Planifica tu Financiamiento</h3>
-                <p>
+            <div className="bg-white p-8 rounded-xl shadow-md flex gap-6 hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 rounded-full bg-[#1a365d] text-white flex items-center justify-center text-2xl font-bold flex-shrink-0">2</div>
+              <div>
+                <h3 className="text-2xl font-bold text-[#1a365d] mb-3">💰 Planifica tu Financiamiento</h3>
+                <p className="text-gray-600 mb-4">
                   Nuestros ejecutivos te ayudan a encontrar el plan de financiamiento 
                   que mejor se adapte a tu presupuesto. Trabajamos con los principales 
                   bancos de Chile.
                 </p>
-                <ul>
+                <ul className="list-disc list-inside space-y-2 text-gray-600">
                   <li>Pre-aprobación en 15 minutos</li>
                   <li>Hasta 84 cuotas</li>
                   <li>Pie desde 10%</li>
@@ -79,16 +78,16 @@ const ComoComprar = () => {
               </div>
             </div>
 
-            <div className="paso-item">
-              <div className="paso-numero">3</div>
-              <div className="paso-content">
-                <h3>📄 Prepara tu Documentación</h3>
-                <p>
+            <div className="bg-white p-8 rounded-xl shadow-md flex gap-6 hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 rounded-full bg-[#1a365d] text-white flex items-center justify-center text-2xl font-bold flex-shrink-0">3</div>
+              <div>
+                <h3 className="text-2xl font-bold text-[#1a365d] mb-3">📄 Prepara tu Documentación</h3>
+                <p className="text-gray-600 mb-4">
                   Reúne los documentos necesarios para agilizar el proceso. 
                   Nuestro equipo te guía en cada paso y verifica que todo 
                   esté en orden.
                 </p>
-                <ul>
+                <ul className="list-disc list-inside space-y-2 text-gray-600">
                   <li>RUT vigente</li>
                   <li>Licencia de conducir</li>
                   <li>Liquidaciones de sueldo</li>
@@ -97,16 +96,16 @@ const ComoComprar = () => {
               </div>
             </div>
 
-            <div className="paso-item">
-              <div className="paso-numero">4</div>
-              <div className="paso-content">
-                <h3>✍️ Firma y Formaliza</h3>
-                <p>
+            <div className="bg-white p-8 rounded-xl shadow-md flex gap-6 hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 rounded-full bg-[#1a365d] text-white flex items-center justify-center text-2xl font-bold flex-shrink-0">4</div>
+              <div>
+                <h3 className="text-2xl font-bold text-[#1a365d] mb-3">✍️ Firma y Formaliza</h3>
+                <p className="text-gray-600 mb-4">
                   Una vez aprobado el financiamiento, procedemos con la firma 
                   del contrato. Nos encargamos de todos los trámites legales 
                   y documentación.
                 </p>
-                <ul>
+                <ul className="list-disc list-inside space-y-2 text-gray-600">
                   <li>Contrato de compraventa</li>
                   <li>Transferencia de dominio</li>
                   <li>Seguro obligatorio</li>
@@ -115,16 +114,16 @@ const ComoComprar = () => {
               </div>
             </div>
 
-            <div className="paso-item">
-              <div className="paso-numero">5</div>
-              <div className="paso-content">
-                <h3>🚗 Recibe tu Auto</h3>
-                <p>
+            <div className="bg-white p-8 rounded-xl shadow-md flex gap-6 hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 rounded-full bg-[#1a365d] text-white flex items-center justify-center text-2xl font-bold flex-shrink-0">5</div>
+              <div>
+                <h3 className="text-2xl font-bold text-[#1a365d] mb-3">🚗 Recibe tu Auto</h3>
+                <p className="text-gray-600 mb-4">
                   ¡Felicidades! Tu nuevo auto está listo. Lo entregamos con 
                   estanque lleno, documentación completa y garantía activada. 
                   También incluye explicación de funciones.
                 </p>
-                <ul>
+                <ul className="list-disc list-inside space-y-2 text-gray-600">
                   <li>Entrega a domicilio</li>
                   <li>Estanque lleno</li>
                   <li>Kit de emergencia</li>
@@ -137,15 +136,15 @@ const ComoComprar = () => {
       </section>
 
       {/* Calculadora de Financiamiento */}
-      <section className="section bg-light">
-        <div className="container">
-          <h2 className="text-center">Calculadora de Financiamiento</h2>
-          <div className="calculadora-container">
-            <div className="calculadora-form">
-              <h3>Simula tu Crédito Automotriz</h3>
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-[#1a365d] mb-8">Calculadora de Financiamiento</h2>
+          <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-8 mt-12 grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-2xl font-bold text-[#1a365d] mb-6">Simula tu Crédito Automotriz</h3>
               
-              <div className="calc-group">
-                <label>Precio del Vehículo</label>
+              <div className="mb-6">
+                <label className="block font-semibold text-[#2c3e50] mb-2">Precio del Vehículo</label>
                 <input
                   type="range"
                   name="precio"
@@ -154,12 +153,13 @@ const ComoComprar = () => {
                   step="500000"
                   value={calculadora.precio}
                   onChange={handleCalculadoraChange}
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-[#1a365d] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer"
                 />
-                <span className="calc-value">{formatearPrecio(calculadora.precio)}</span>
+                <span className="block mt-2 text-lg font-bold text-[#1a365d]">{formatearPrecio(calculadora.precio)}</span>
               </div>
 
-              <div className="calc-group">
-                <label>Pie (Inicial)</label>
+              <div className="mb-6">
+                <label className="block font-semibold text-[#2c3e50] mb-2">Pie (Inicial)</label>
                 <input
                   type="range"
                   name="pie"
@@ -168,17 +168,18 @@ const ComoComprar = () => {
                   step="100000"
                   value={calculadora.pie}
                   onChange={handleCalculadoraChange}
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-[#1a365d] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer"
                 />
-                <span className="calc-value">{formatearPrecio(calculadora.pie)}</span>
+                <span className="block mt-2 text-lg font-bold text-[#1a365d]">{formatearPrecio(calculadora.pie)}</span>
               </div>
 
-              <div className="calc-group">
-                <label>Número de Cuotas</label>
+              <div className="mb-6">
+                <label className="block font-semibold text-[#2c3e50] mb-2">Número de Cuotas</label>
                 <select
                   name="cuotas"
                   value={calculadora.cuotas}
                   onChange={handleCalculadoraChange}
-                  className="calc-select"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
                 >
                   <option value="12">12 meses</option>
                   <option value="24">24 meses</option>
@@ -190,8 +191,8 @@ const ComoComprar = () => {
                 </select>
               </div>
 
-              <div className="calc-group">
-                <label>Tasa de Interés Anual (%)</label>
+              <div className="mb-6">
+                <label className="block font-semibold text-[#2c3e50] mb-2">Tasa de Interés Anual (%)</label>
                 <input
                   type="range"
                   name="tasa"
@@ -200,37 +201,38 @@ const ComoComprar = () => {
                   step="0.5"
                   value={calculadora.tasa}
                   onChange={handleCalculadoraChange}
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-[#1a365d] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer"
                 />
-                <span className="calc-value">{calculadora.tasa}%</span>
+                <span className="block mt-2 text-lg font-bold text-[#1a365d]">{calculadora.tasa}%</span>
               </div>
             </div>
 
-            <div className="calculadora-resultado">
-              <h3>Resumen de tu Crédito</h3>
-              <div className="resultado-grid">
-                <div className="resultado-item">
-                  <span className="resultado-label">Precio del Vehículo</span>
-                  <span className="resultado-valor">{formatearPrecio(calculadora.precio)}</span>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-2xl font-bold text-[#1a365d] mb-6">Resumen de tu Crédito</h3>
+              <div className="space-y-4 mb-6">
+                <div className="flex justify-between items-center pb-3 border-b border-gray-200">
+                  <span className="text-gray-600 font-medium">Precio del Vehículo</span>
+                  <span className="text-lg font-bold text-[#1a365d]">{formatearPrecio(calculadora.precio)}</span>
                 </div>
-                <div className="resultado-item">
-                  <span className="resultado-label">Pie</span>
-                  <span className="resultado-valor">{formatearPrecio(calculadora.pie)}</span>
+                <div className="flex justify-between items-center pb-3 border-b border-gray-200">
+                  <span className="text-gray-600 font-medium">Pie</span>
+                  <span className="text-lg font-bold text-[#1a365d]">{formatearPrecio(calculadora.pie)}</span>
                 </div>
-                <div className="resultado-item">
-                  <span className="resultado-label">Monto a Financiar</span>
-                  <span className="resultado-valor">{formatearPrecio(calculadora.precio - calculadora.pie)}</span>
+                <div className="flex justify-between items-center pb-3 border-b border-gray-200">
+                  <span className="text-gray-600 font-medium">Monto a Financiar</span>
+                  <span className="text-lg font-bold text-[#1a365d]">{formatearPrecio(calculadora.precio - calculadora.pie)}</span>
                 </div>
-                <div className="resultado-item principal">
-                  <span className="resultado-label">Cuota Mensual</span>
-                  <span className="resultado-valor destacado">{formatearPrecio(calcularCuota())}</span>
+                <div className="flex justify-between items-center pb-3 border-b-4 border-[#1a365d] pt-4">
+                  <span className="text-gray-600 font-medium">Cuota Mensual</span>
+                  <span className="text-2xl font-bold text-[#c53030]">{formatearPrecio(calcularCuota())}</span>
                 </div>
               </div>
               
-              <div className="calc-actions">
-                <button className="btn">
+              <div className="flex gap-3 flex-wrap">
+                <button className="flex-1 px-6 py-3 bg-[#1a365d] text-white rounded-lg font-semibold hover:bg-[#c53030] transition-colors">
                   📞 Solicitar Pre-aprobación
                 </button>
-                <button className="btn btn-secondary">
+                <button className="flex-1 px-6 py-3 bg-gray-200 text-[#1a365d] rounded-lg font-semibold hover:bg-gray-300 transition-colors">
                   💬 Consultar por WhatsApp
                 </button>
               </div>
@@ -240,20 +242,20 @@ const ComoComprar = () => {
       </section>
 
       {/* Opciones de Financiamiento */}
-      <section className="section">
-        <div className="container">
-          <h2 className="text-center">Opciones de Financiamiento</h2>
-          <div className="financiamiento-grid">
-            <div className="financiamiento-card">
-              <div className="financiamiento-icon">🏦</div>
-              <h3>Crédito Bancario</h3>
-              <div className="financiamiento-features">
-                <p><strong>Tasa desde:</strong> 6.9% anual</p>
-                <p><strong>Plazo:</strong> Hasta 84 meses</p>
-                <p><strong>Pie mínimo:</strong> 10%</p>
-                <p><strong>Aprobación:</strong> 24-48 horas</p>
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-[#1a365d] mb-8">Opciones de Financiamiento</h2>
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <div className="text-5xl mb-4 text-center">🏦</div>
+              <h3 className="text-2xl font-bold text-[#1a365d] mb-4 text-center">Crédito Bancario</h3>
+              <div className="bg-gray-50 p-4 rounded-lg mb-6 space-y-2">
+                <p className="text-sm text-gray-700"><strong>Tasa desde:</strong> 6.9% anual</p>
+                <p className="text-sm text-gray-700"><strong>Plazo:</strong> Hasta 84 meses</p>
+                <p className="text-sm text-gray-700"><strong>Pie mínimo:</strong> 10%</p>
+                <p className="text-sm text-gray-700"><strong>Aprobación:</strong> 24-48 horas</p>
               </div>
-              <ul>
+              <ul className="space-y-2 text-gray-600">
                 <li>✅ Mejores tasas del mercado</li>
                 <li>✅ Flexibilidad en cuotas</li>
                 <li>✅ Seguro incluido</li>
@@ -261,17 +263,17 @@ const ComoComprar = () => {
               </ul>
             </div>
 
-            <div className="financiamiento-card destacada">
-              <div className="financiamiento-badge">⭐ Más Popular</div>
-              <div className="financiamiento-icon">💳</div>
-              <h3>Leasing Automotriz</h3>
-              <div className="financiamiento-features">
-                <p><strong>Tasa desde:</strong> 7.5% anual</p>
-                <p><strong>Plazo:</strong> 24-60 meses</p>
-                <p><strong>Pie mínimo:</strong> 15%</p>
-                <p><strong>Aprobación:</strong> 15 minutos</p>
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow border-4 border-[#ffd700] relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#ffd700] text-[#1a365d] px-4 py-1 rounded-full text-sm font-bold">⭐ Más Popular</div>
+              <div className="text-5xl mb-4 text-center mt-2">💳</div>
+              <h3 className="text-2xl font-bold text-[#1a365d] mb-4 text-center">Leasing Automotriz</h3>
+              <div className="bg-gray-50 p-4 rounded-lg mb-6 space-y-2">
+                <p className="text-sm text-gray-700"><strong>Tasa desde:</strong> 7.5% anual</p>
+                <p className="text-sm text-gray-700"><strong>Plazo:</strong> 24-60 meses</p>
+                <p className="text-sm text-gray-700"><strong>Pie mínimo:</strong> 15%</p>
+                <p className="text-sm text-gray-700"><strong>Aprobación:</strong> 15 minutos</p>
               </div>
-              <ul>
+              <ul className="space-y-2 text-gray-600">
                 <li>✅ Beneficios tributarios</li>
                 <li>✅ Renovación fácil</li>
                 <li>✅ Mantención incluida</li>
@@ -279,16 +281,16 @@ const ComoComprar = () => {
               </ul>
             </div>
 
-            <div className="financiamiento-card">
-              <div className="financiamiento-icon">💰</div>
-              <h3>Pago al Contado</h3>
-              <div className="financiamiento-features">
-                <p><strong>Descuento:</strong> Hasta 5%</p>
-                <p><strong>Entrega:</strong> Inmediata</p>
-                <p><strong>Trámites:</strong> Mínimos</p>
-                <p><strong>Garantía:</strong> Extendida gratis</p>
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
+              <div className="text-5xl mb-4 text-center">💰</div>
+              <h3 className="text-2xl font-bold text-[#1a365d] mb-4 text-center">Pago al Contado</h3>
+              <div className="bg-gray-50 p-4 rounded-lg mb-6 space-y-2">
+                <p className="text-sm text-gray-700"><strong>Descuento:</strong> Hasta 5%</p>
+                <p className="text-sm text-gray-700"><strong>Entrega:</strong> Inmediata</p>
+                <p className="text-sm text-gray-700"><strong>Trámites:</strong> Mínimos</p>
+                <p className="text-sm text-gray-700"><strong>Garantía:</strong> Extendida gratis</p>
               </div>
-              <ul>
+              <ul className="space-y-2 text-gray-600">
                 <li>✅ Mejor precio final</li>
                 <li>✅ Sin intereses</li>
                 <li>✅ Proceso más rápido</li>
@@ -300,13 +302,13 @@ const ComoComprar = () => {
       </section>
 
       {/* Documentos Necesarios */}
-      <section className="section bg-primary">
-        <div className="container">
-          <h2 className="text-center" style={{color: 'white'}}>Documentos Necesarios</h2>
-          <div className="documentos-grid">
-            <div className="documento-categoria">
-              <h3>👤 Persona Natural</h3>
-              <ul>
+      <section className="py-16 bg-gradient-to-br from-[#1a365d] to-[#2d3748]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">Documentos Necesarios</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl text-white">
+              <h3 className="text-xl font-bold mb-4 text-[#ffd700]">👤 Persona Natural</h3>
+              <ul className="space-y-2">
                 <li>📄 RUT vigente</li>
                 <li>🚗 Licencia de conducir clase B</li>
                 <li>💼 Últimas 3 liquidaciones de sueldo</li>
@@ -316,9 +318,9 @@ const ComoComprar = () => {
               </ul>
             </div>
 
-            <div className="documento-categoria">
-              <h3>🏢 Empresa</h3>
-              <ul>
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl text-white">
+              <h3 className="text-xl font-bold mb-4 text-[#ffd700]">🏢 Empresa</h3>
+              <ul className="space-y-2">
                 <li>📄 RUT de la empresa</li>
                 <li>📋 Escritura de constitución</li>
                 <li>💰 Estados financieros</li>
@@ -328,9 +330,9 @@ const ComoComprar = () => {
               </ul>
             </div>
 
-            <div className="documento-categoria">
-              <h3>🔄 Vehículo en Parte de Pago</h3>
-              <ul>
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl text-white">
+              <h3 className="text-xl font-bold mb-4 text-[#ffd700]">🔄 Vehículo en Parte de Pago</h3>
+              <ul className="space-y-2">
                 <li>📜 Padrón original</li>
                 <li>📋 Permiso de circulación</li>
                 <li>🛡️ SOAP al día</li>
@@ -344,66 +346,66 @@ const ComoComprar = () => {
       </section>
 
       {/* Beneficios Adicionales */}
-      <section className="section">
-        <div className="container">
-          <h2 className="text-center">Beneficios Incluidos</h2>
-          <div className="beneficios-grid">
-            <div className="beneficio-item">
-              <div className="beneficio-icon">🛡️</div>
-              <h3>Garantía Extendida</h3>
-              <p>Protección adicional hasta 5 años o 100,000 km en componentes principales.</p>
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-[#1a365d] mb-12">Beneficios Incluidos</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
+              <div className="text-5xl mb-4">🛡️</div>
+              <h3 className="text-xl font-bold text-[#1a365d] mb-3">Garantía Extendida</h3>
+              <p className="text-gray-600">Protección adicional hasta 5 años o 100,000 km en componentes principales.</p>
             </div>
 
-            <div className="beneficio-item">
-              <div className="beneficio-icon">🚚</div>
-              <h3>Entrega a Domicilio</h3>
-              <p>Llevamos tu auto nuevo hasta tu casa u oficina sin costo adicional.</p>
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
+              <div className="text-5xl mb-4">🚚</div>
+              <h3 className="text-xl font-bold text-[#1a365d] mb-3">Entrega a Domicilio</h3>
+              <p className="text-gray-600">Llevamos tu auto nuevo hasta tu casa u oficina sin costo adicional.</p>
             </div>
 
-            <div className="beneficio-item">
-              <div className="beneficio-icon">🔧</div>
-              <h3>Primera Mantención</h3>
-              <p>Primera mantención gratuita incluida en nuestra red de talleres.</p>
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
+              <div className="text-5xl mb-4">🔧</div>
+              <h3 className="text-xl font-bold text-[#1a365d] mb-3">Primera Mantención</h3>
+              <p className="text-gray-600">Primera mantención gratuita incluida en nuestra red de talleres.</p>
             </div>
 
-            <div className="beneficio-item">
-              <div className="beneficio-icon">📱</div>
-              <h3>App AutoChile</h3>
-              <p>Gestiona tus pagos, mantenciones y garantía desde tu smartphone.</p>
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
+              <div className="text-5xl mb-4">📱</div>
+              <h3 className="text-xl font-bold text-[#1a365d] mb-3">App AutoChile</h3>
+              <p className="text-gray-600">Gestiona tus pagos, mantenciones y garantía desde tu smartphone.</p>
             </div>
 
-            <div className="beneficio-item">
-              <div className="beneficio-icon">🆘</div>
-              <h3>Asistencia 24/7</h3>
-              <p>Servicio de asistencia en carretera las 24 horas durante el primer año.</p>
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
+              <div className="text-5xl mb-4">🆘</div>
+              <h3 className="text-xl font-bold text-[#1a365d] mb-3">Asistencia 24/7</h3>
+              <p className="text-gray-600">Servicio de asistencia en carretera las 24 horas durante el primer año.</p>
             </div>
 
-            <div className="beneficio-item">
-              <div className="beneficio-icon">🎓</div>
-              <h3>Capacitación</h3>
-              <p>Sesión de inducción completa sobre las funciones de tu nuevo vehículo.</p>
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center">
+              <div className="text-5xl mb-4">🎓</div>
+              <h3 className="text-xl font-bold text-[#1a365d] mb-3">Capacitación</h3>
+              <p className="text-gray-600">Sesión de inducción completa sobre las funciones de tu nuevo vehículo.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Final */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="cta-comprar text-center">
-            <h2>¿Listo para tu Nuevo Auto?</h2>
-            <p>
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-[#1a365d] mb-4">¿Listo para tu Nuevo Auto?</h2>
+            <p className="text-xl text-gray-600 mb-8">
               Nuestro equipo está preparado para guiarte en cada paso del proceso. 
               ¡Comienza hoy mismo!
             </p>
-            <div className="cta-actions">
-              <button className="btn">
+            <div className="flex gap-4 justify-center flex-wrap">
+              <button className="px-8 py-4 bg-[#1a365d] text-white rounded-lg font-semibold hover:bg-[#c53030] transition-colors">
                 🚗 Ver Catálogo
               </button>
-              <button className="btn btn-secondary">
+              <button className="px-8 py-4 bg-gray-200 text-[#1a365d] rounded-lg font-semibold hover:bg-gray-300 transition-colors">
                 📞 Agendar Cita
               </button>
-              <button className="btn">
+              <button className="px-8 py-4 bg-[#ffd700] text-[#1a365d] rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
                 💬 Consultar por WhatsApp
               </button>
             </div>

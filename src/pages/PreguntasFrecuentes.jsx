@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './PreguntasFrecuentes.css';
 
 const PreguntasFrecuentes = () => {
   const [preguntaActiva, setPreguntaActiva] = useState(null);
@@ -131,51 +130,57 @@ const PreguntasFrecuentes = () => {
   ];
 
   return (
-    <div className="preguntas-frecuentes">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="hero-faq">
-        <div className="container">
-          <div className="hero-faq-content">
-            <h1>Preguntas Frecuentes</h1>
-            <p>Encuentra respuestas a las consultas más comunes de nuestros clientes</p>
+      <section className="bg-gradient-to-br from-[#1a365d] to-[#2d3748] text-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-4 text-white">Preguntas Frecuentes</h1>
+            <p className="text-xl text-gray-200">Encuentra respuestas a las consultas más comunes de nuestros clientes</p>
           </div>
         </div>
       </section>
 
       {/* Búsqueda Rápida */}
-      <section className="section">
-        <div className="container">
-          <div className="busqueda-faq">
-            <h2 className="text-center">¿En qué podemos ayudarte?</h2>
-            <div className="search-box">
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-[#1a365d] mb-6 text-center">¿En qué podemos ayudarte?</h2>
+            <div className="flex gap-2">
               <input 
                 type="text" 
                 placeholder="Busca tu pregunta aquí..." 
-                className="search-input"
+                className="flex-1 px-6 py-4 border-2 border-gray-300 rounded-lg text-lg focus:outline-none focus:border-[#1a365d] transition-colors"
               />
-              <button className="search-btn">🔍</button>
+              <button className="px-8 py-4 bg-[#1a365d] text-white rounded-lg font-semibold hover:bg-[#c53030] transition-colors">
+                🔍
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Categorías */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="categorias-faq">
-            <h3 className="text-center">Selecciona una categoría</h3>
-            <div className="categorias-grid">
+      <section className="py-16 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h3 className="text-2xl font-bold text-[#1a365d] mb-6 text-center">Selecciona una categoría</h3>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               {categorias.map(categoria => (
                 <button
                   key={categoria.id}
-                  className={`categoria-btn ${categoriaActiva === categoria.id ? 'activa' : ''}`}
+                  className={`bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition-all flex flex-col items-center gap-2 border-2 ${
+                    categoriaActiva === categoria.id 
+                      ? 'border-[#1a365d] bg-blue-50' 
+                      : 'border-transparent'
+                  }`}
                   onClick={() => {
                     setCategoriaActiva(categoria.id);
                     setPreguntaActiva(null);
                   }}
                 >
-                  <span className="categoria-icono">{categoria.icono}</span>
-                  <span className="categoria-nombre">{categoria.nombre}</span>
+                  <span className="text-3xl">{categoria.icono}</span>
+                  <span className="text-sm font-semibold text-[#2c3e50]">{categoria.nombre}</span>
                 </button>
               ))}
             </div>
@@ -184,29 +189,35 @@ const PreguntasFrecuentes = () => {
       </section>
 
       {/* Preguntas y Respuestas */}
-      <section className="section">
-        <div className="container">
-          <div className="faq-container">
-            <h3 className="faq-categoria-titulo">
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-[#1a365d] mb-8 text-center">
               {categorias.find(c => c.id === categoriaActiva)?.icono} {' '}
               {categorias.find(c => c.id === categoriaActiva)?.nombre}
             </h3>
             
-            <div className="faq-lista">
+            <div className="space-y-4">
               {preguntas[categoriaActiva]?.map((item, index) => (
-                <div key={index} className="faq-item">
+                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden">
                   <button
-                    className={`faq-pregunta ${preguntaActiva === index ? 'activa' : ''}`}
+                    className={`w-full text-left p-6 flex justify-between items-center gap-4 transition-colors ${
+                      preguntaActiva === index ? 'bg-blue-50' : 'hover:bg-gray-50'
+                    }`}
                     onClick={() => togglePregunta(index)}
                   >
-                    <span className="pregunta-texto">{item.pregunta}</span>
-                    <span className="pregunta-icono">
+                    <span className="text-lg font-semibold text-[#2c3e50] flex-1">{item.pregunta}</span>
+                    <span className="text-2xl font-bold text-[#1a365d] flex-shrink-0 w-8 h-8 flex items-center justify-center">
                       {preguntaActiva === index ? '−' : '+'}
                     </span>
                   </button>
                   
-                  <div className={`faq-respuesta ${preguntaActiva === index ? 'mostrar' : ''}`}>
-                    <div className="respuesta-contenido">
+                  <div 
+                    className={`overflow-hidden transition-all duration-300 ${
+                      preguntaActiva === index ? 'max-h-96' : 'max-h-0'
+                    }`}
+                  >
+                    <div className="p-6 pt-0 text-gray-700 leading-relaxed">
                       <p>{item.respuesta}</p>
                     </div>
                   </div>
@@ -218,72 +229,83 @@ const PreguntasFrecuentes = () => {
       </section>
 
       {/* Estadísticas de Ayuda */}
-      <section className="section bg-primary">
-        <div className="container">
-          <h2 className="text-center" style={{color: 'white'}}>Te Ayudamos a Decidir</h2>
-          <div className="estadisticas-ayuda">
-            <div className="stat-ayuda">
-              <div className="stat-numero">95%</div>
-              <div className="stat-texto">De consultas resueltas online</div>
+      <section className="py-16 bg-[#1a365d]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-center text-4xl font-bold text-white mb-12">Te Ayudamos a Decidir</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-5xl font-bold text-white mb-2">95%</div>
+              <div className="text-gray-200">De consultas resueltas online</div>
             </div>
-            <div className="stat-ayuda">
-              <div className="stat-numero">24/7</div>
-              <div className="stat-texto">Asistencia por WhatsApp</div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-white mb-2">24/7</div>
+              <div className="text-gray-200">Asistencia por WhatsApp</div>
             </div>
-            <div className="stat-ayuda">
-              <div className="stat-numero">15min</div>
-              <div className="stat-texto">Tiempo promedio de respuesta</div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-white mb-2">15min</div>
+              <div className="text-gray-200">Tiempo promedio de respuesta</div>
             </div>
-            <div className="stat-ayuda">
-              <div className="stat-numero">5⭐</div>
-              <div className="stat-texto">Calificación en atención</div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-white mb-2">5⭐</div>
+              <div className="text-gray-200">Calificación en atención</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contacto Directo */}
-      <section className="section">
-        <div className="container">
-          <div className="contacto-directo">
-            <h2 className="text-center">¿No encontraste tu respuesta?</h2>
-            <p className="text-center">
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-[#1a365d] mb-4 text-center">¿No encontraste tu respuesta?</h2>
+            <p className="text-xl text-gray-600 mb-12 text-center">
               Nuestro equipo de expertos está listo para ayudarte con cualquier consulta específica.
             </p>
             
-            <div className="contacto-opciones">
-              <div className="contacto-opcion">
-                <div className="contacto-icono">📞</div>
-                <h3>Llámanos</h3>
-                <p>Atención inmediata con nuestros ejecutivos</p>
-                <a href="tel:+56222345678" className="btn">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow">
+                <div className="text-5xl mb-4">📞</div>
+                <h3 className="text-xl font-bold text-[#1a365d] mb-2">Llámanos</h3>
+                <p className="text-gray-600 mb-4">Atención inmediata con nuestros ejecutivos</p>
+                <a 
+                  href="tel:+56222345678" 
+                  className="inline-block px-6 py-3 bg-[#1a365d] text-white rounded-lg font-semibold hover:bg-[#c53030] transition-colors"
+                >
                   +56 2 2234 5678
                 </a>
               </div>
 
-              <div className="contacto-opcion">
-                <div className="contacto-icono">💬</div>
-                <h3>WhatsApp</h3>
-                <p>Respuesta rápida por mensaje</p>
-                <a href="https://wa.me/56922345678" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow">
+                <div className="text-5xl mb-4">💬</div>
+                <h3 className="text-xl font-bold text-[#1a365d] mb-2">WhatsApp</h3>
+                <p className="text-gray-600 mb-4">Respuesta rápida por mensaje</p>
+                <a 
+                  href="https://wa.me/56922345678" 
+                  className="inline-block px-6 py-3 bg-[#c53030] text-white rounded-lg font-semibold hover:bg-[#1a365d] transition-colors" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
                   Escribir Mensaje
                 </a>
               </div>
 
-              <div className="contacto-opcion">
-                <div className="contacto-icono">📧</div>
-                <h3>Email</h3>
-                <p>Consultas detalladas por correo</p>
-                <a href="mailto:info@autochile.cl" className="btn">
+              <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow">
+                <div className="text-5xl mb-4">📧</div>
+                <h3 className="text-xl font-bold text-[#1a365d] mb-2">Email</h3>
+                <p className="text-gray-600 mb-4">Consultas detalladas por correo</p>
+                <a 
+                  href="mailto:info@autochile.cl" 
+                  className="inline-block px-6 py-3 bg-[#1a365d] text-white rounded-lg font-semibold hover:bg-[#c53030] transition-colors"
+                >
                   info@autochile.cl
                 </a>
               </div>
 
-              <div className="contacto-opcion">
-                <div className="contacto-icono">🏪</div>
-                <h3>Visítanos</h3>
-                <p>Atención personalizada en nuestro showroom</p>
-                <button className="btn btn-secondary">
+              <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow">
+                <div className="text-5xl mb-4">🏪</div>
+                <h3 className="text-xl font-bold text-[#1a365d] mb-2">Visítanos</h3>
+                <p className="text-gray-600 mb-4">Atención personalizada en nuestro showroom</p>
+                <button className="px-6 py-3 bg-[#c53030] text-white rounded-lg font-semibold hover:bg-[#1a365d] transition-colors">
                   Ver Ubicaciones
                 </button>
               </div>
@@ -293,63 +315,63 @@ const PreguntasFrecuentes = () => {
       </section>
 
       {/* Tips Útiles */}
-      <section className="section bg-light">
-        <div className="container">
-          <h2 className="text-center">Tips Útiles Antes de Comprar</h2>
-          <div className="tips-grid">
-            <div className="tip-item">
-              <div className="tip-icono">💡</div>
-              <h3>Define tu Presupuesto</h3>
-              <p>Considera no solo el precio del auto, sino también seguro, mantención y combustible. La cuota mensual no debería superar el 30% de tus ingresos.</p>
+      <section className="py-16 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-center text-4xl font-bold text-[#1a365d] mb-12">Tips Útiles Antes de Comprar</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="text-4xl mb-3">💡</div>
+              <h3 className="text-xl font-bold text-[#1a365d] mb-3">Define tu Presupuesto</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Considera no solo el precio del auto, sino también seguro, mantención y combustible. La cuota mensual no debería superar el 30% de tus ingresos.</p>
             </div>
 
-            <div className="tip-item">
-              <div className="tip-icono">🔍</div>
-              <h3>Investiga el Modelo</h3>
-              <p>Revisa opiniones, consumo de combustible, costos de mantención y valor de reventa. Esto te ayudará a tomar la mejor decisión.</p>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="text-4xl mb-3">🔍</div>
+              <h3 className="text-xl font-bold text-[#1a365d] mb-3">Investiga el Modelo</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Revisa opiniones, consumo de combustible, costos de mantención y valor de reventa. Esto te ayudará a tomar la mejor decisión.</p>
             </div>
 
-            <div className="tip-item">
-              <div className="tip-icono">🚗</div>
-              <h3>Prueba Antes de Comprar</h3>
-              <p>Realiza un test drive en diferentes condiciones: ciudad, carretera, estacionamiento. Verifica que te sientes cómodo al conducir.</p>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="text-4xl mb-3">🚗</div>
+              <h3 className="text-xl font-bold text-[#1a365d] mb-3">Prueba Antes de Comprar</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Realiza un test drive en diferentes condiciones: ciudad, carretera, estacionamiento. Verifica que te sientes cómodo al conducir.</p>
             </div>
 
-            <div className="tip-item">
-              <div className="tip-icono">📋</div>
-              <h3>Revisa la Documentación</h3>
-              <p>Asegúrate de que todos los papeles estén en orden: padrón, permisos, revisión técnica y que no tenga multas pendientes.</p>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="text-4xl mb-3">📋</div>
+              <h3 className="text-xl font-bold text-[#1a365d] mb-3">Revisa la Documentación</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Asegúrate de que todos los papeles estén en orden: padrón, permisos, revisión técnica y que no tenga multas pendientes.</p>
             </div>
 
-            <div className="tip-item">
-              <div className="tip-icono">🛡️</div>
-              <h3>Considera la Garantía</h3>
-              <p>Evalúa las opciones de garantía extendida y servicios adicionales como asistencia en carretera y mantenciones incluidas.</p>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="text-4xl mb-3">🛡️</div>
+              <h3 className="text-xl font-bold text-[#1a365d] mb-3">Considera la Garantía</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Evalúa las opciones de garantía extendida y servicios adicionales como asistencia en carretera y mantenciones incluidas.</p>
             </div>
 
-            <div className="tip-item">
-              <div className="tip-icono">💰</div>
-              <h3>Compara Financiamiento</h3>
-              <p>No solo mires la cuota mensual, sino también la tasa de interés, gastos asociados y condiciones de prepago.</p>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="text-4xl mb-3">💰</div>
+              <h3 className="text-xl font-bold text-[#1a365d] mb-3">Compara Financiamiento</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">No solo mires la cuota mensual, sino también la tasa de interés, gastos asociados y condiciones de prepago.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Final */}
-      <section className="section bg-primary">
-        <div className="container">
-          <div className="cta-faq text-center">
-            <h2 style={{color: 'white'}}>¿Listo para Encontrar tu Auto Ideal?</h2>
-            <p style={{color: 'var(--light-gray)'}}>
+      <section className="py-16 bg-[#1a365d]">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold text-white mb-4">¿Listo para Encontrar tu Auto Ideal?</h2>
+            <p className="text-xl text-gray-200 mb-8">
               Con toda esta información, ya estás preparado para tomar la mejor decisión. 
               ¡Nuestro equipo te está esperando!
             </p>
-            <div className="cta-actions">
-              <button className="btn btn-secondary">
+            <div className="flex gap-4 justify-center flex-wrap">
+              <button className="px-8 py-4 bg-[#c53030] text-white rounded-lg font-semibold hover:bg-[#ffd700] hover:text-[#1a365d] transition-colors text-lg">
                 🚗 Ver Catálogo
               </button>
-              <button className="btn">
+              <button className="px-8 py-4 bg-white text-[#1a365d] rounded-lg font-semibold hover:bg-[#ffd700] transition-colors text-lg">
                 📞 Hablar con Experto
               </button>
             </div>

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './Contactanos.css';
 
 const Contactanos = () => {
   const [formData, setFormData] = useState({
@@ -21,79 +20,78 @@ const Contactanos = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
     alert('¡Gracias por contactarnos! Te responderemos pronto.');
     console.log('Datos del formulario:', formData);
   };
 
   return (
-    <div className="contactanos">
+    <div className="w-full">
       {/* Hero Section */}
-      <section className="hero-contacto">
-        <div className="container">
-          <div className="hero-contacto-content">
-            <h1>Contáctanos</h1>
-            <p>Estamos aquí para ayudarte a encontrar tu auto ideal</p>
+      <section className="bg-gradient-to-br from-[#1a365d] to-[#2d3748] text-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-4 text-white">Contáctanos</h1>
+            <p className="text-xl text-gray-200">Estamos aquí para ayudarte a encontrar tu auto ideal</p>
           </div>
         </div>
       </section>
 
       {/* Información de Contacto */}
-      <section className="section">
-        <div className="container">
-          <div className="contacto-info-grid">
-            <div className="contacto-principal">
-              <h2>¿Cómo podemos ayudarte?</h2>
-              <p>
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl font-bold text-[#1a365d] mb-4">¿Cómo podemos ayudarte?</h2>
+              <p className="text-gray-600 mb-8 leading-relaxed">
                 Nuestro equipo de expertos está disponible para responder todas tus consultas 
                 sobre vehículos, financiamiento, garantías y servicios post-venta.
               </p>
               
-              <div className="canales-contacto">
-                <div className="canal-item">
-                  <div className="canal-icon">📞</div>
-                  <div className="canal-info">
-                    <h3>Llámanos</h3>
-                    <p><a href="tel:+56222345678">+56 2 2234 5678</a></p>
-                    <span>Lun-Vie: 9:00-19:00, Sáb: 9:00-17:00</span>
+              <div className="space-y-6">
+                <div className="flex gap-4 items-start bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                  <div className="text-4xl flex-shrink-0">📞</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#1a365d] mb-2">Llámanos</h3>
+                    <p className="text-gray-700 mb-1"><a href="tel:+56222345678" className="text-[#1a365d] hover:text-[#c53030] font-semibold transition-colors">+56 2 2234 5678</a></p>
+                    <span className="text-sm text-gray-500">Lun-Vie: 9:00-19:00, Sáb: 9:00-17:00</span>
                   </div>
                 </div>
 
-                <div className="canal-item">
-                  <div className="canal-icon">💬</div>
-                  <div className="canal-info">
-                    <h3>WhatsApp</h3>
-                    <p><a href="https://wa.me/56922345678" target="_blank" rel="noopener noreferrer">+56 9 2234 5678</a></p>
-                    <span>Respuesta inmediata</span>
+                <div className="flex gap-4 items-start bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                  <div className="text-4xl flex-shrink-0">💬</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#1a365d] mb-2">WhatsApp</h3>
+                    <p className="text-gray-700 mb-1"><a href="https://wa.me/56922345678" target="_blank" rel="noopener noreferrer" className="text-[#1a365d] hover:text-[#c53030] font-semibold transition-colors">+56 9 2234 5678</a></p>
+                    <span className="text-sm text-gray-500">Respuesta inmediata</span>
                   </div>
                 </div>
 
-                <div className="canal-item">
-                  <div className="canal-icon">📧</div>
-                  <div className="canal-info">
-                    <h3>Email</h3>
-                    <p><a href="mailto:info@autochile.cl">info@autochile.cl</a></p>
-                    <span>Respuesta en 24 hrs</span>
+                <div className="flex gap-4 items-start bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                  <div className="text-4xl flex-shrink-0">📧</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#1a365d] mb-2">Email</h3>
+                    <p className="text-gray-700 mb-1"><a href="mailto:info@autochile.cl" className="text-[#1a365d] hover:text-[#c53030] font-semibold transition-colors">info@autochile.cl</a></p>
+                    <span className="text-sm text-gray-500">Respuesta en 24 hrs</span>
                   </div>
                 </div>
 
-                <div className="canal-item">
-                  <div className="canal-icon">📍</div>
-                  <div className="canal-info">
-                    <h3>Visítanos</h3>
-                    <p>Av. Providencia 1234, Santiago</p>
-                    <span>Showroom principal</span>
+                <div className="flex gap-4 items-start bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow">
+                  <div className="text-4xl flex-shrink-0">📍</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#1a365d] mb-2">Visítanos</h3>
+                    <p className="text-gray-700 mb-1">Av. Providencia 1234, Santiago</p>
+                    <span className="text-sm text-gray-500">Showroom principal</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="formulario-contacto">
-              <div className="form-container">
-                <h3>Envíanos un Mensaje</h3>
+            <div className="bg-white">
+              <div className="bg-gray-50 p-8 rounded-xl shadow-md">
+                <h3 className="text-2xl font-bold text-[#1a365d] mb-6">Envíanos un Mensaje</h3>
                 <form onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <label htmlFor="nombre">Nombre Completo *</label>
+                  <div className="mb-6">
+                    <label htmlFor="nombre" className="block font-semibold text-[#2c3e50] mb-2">Nombre Completo *</label>
                     <input
                       type="text"
                       id="nombre"
@@ -102,12 +100,13 @@ const Contactanos = () => {
                       onChange={handleChange}
                       required
                       placeholder="Ingresa tu nombre completo"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
                     />
                   </div>
 
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label htmlFor="email">Email *</label>
+                  <div className="grid md:grid-cols-2 gap-4 mb-6">
+                    <div>
+                      <label htmlFor="email" className="block font-semibold text-[#2c3e50] mb-2">Email *</label>
                       <input
                         type="email"
                         id="email"
@@ -116,11 +115,12 @@ const Contactanos = () => {
                         onChange={handleChange}
                         required
                         placeholder="tu@email.com"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
                       />
                     </div>
 
-                    <div className="form-group">
-                      <label htmlFor="telefono">Teléfono *</label>
+                    <div>
+                      <label htmlFor="telefono" className="block font-semibold text-[#2c3e50] mb-2">Teléfono *</label>
                       <input
                         type="tel"
                         id="telefono"
@@ -129,18 +129,20 @@ const Contactanos = () => {
                         onChange={handleChange}
                         required
                         placeholder="+56 9 1234 5678"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
                       />
                     </div>
                   </div>
 
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label htmlFor="tipoConsulta">Tipo de Consulta</label>
+                  <div className="grid md:grid-cols-2 gap-4 mb-6">
+                    <div>
+                      <label htmlFor="tipoConsulta" className="block font-semibold text-[#2c3e50] mb-2">Tipo de Consulta</label>
                       <select
                         id="tipoConsulta"
                         name="tipoConsulta"
                         value={formData.tipoConsulta}
                         onChange={handleChange}
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
                       >
                         <option value="general">Consulta General</option>
                         <option value="vehiculo">Información de Vehículo</option>
@@ -150,13 +152,14 @@ const Contactanos = () => {
                       </select>
                     </div>
 
-                    <div className="form-group">
-                      <label htmlFor="vehiculoInteres">Vehículo de Interés</label>
+                    <div>
+                      <label htmlFor="vehiculoInteres" className="block font-semibold text-[#2c3e50] mb-2">Vehículo de Interés</label>
                       <select
                         id="vehiculoInteres"
                         name="vehiculoInteres"
                         value={formData.vehiculoInteres}
                         onChange={handleChange}
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
                       >
                         <option value="">Selecciona un vehículo</option>
                         <option value="toyota-corolla">Toyota Corolla</option>
@@ -169,8 +172,8 @@ const Contactanos = () => {
                     </div>
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="mensaje">Mensaje *</label>
+                  <div className="mb-6">
+                    <label htmlFor="mensaje" className="block font-semibold text-[#2c3e50] mb-2">Mensaje *</label>
                     <textarea
                       id="mensaje"
                       name="mensaje"
@@ -179,10 +182,11 @@ const Contactanos = () => {
                       required
                       rows="5"
                       placeholder="Cuéntanos en qué podemos ayudarte..."
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors resize-y"
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="btn btn-form">
+                  <button type="submit" className="w-full px-6 py-4 bg-[#1a365d] text-white rounded-lg font-semibold hover:bg-[#c53030] transition-colors">
                     📤 Enviar Mensaje
                   </button>
                 </form>
@@ -193,43 +197,43 @@ const Contactanos = () => {
       </section>
 
       {/* Horarios de Atención */}
-      <section className="section bg-light">
-        <div className="container">
-          <h2 className="text-center">Horarios de Atención</h2>
-          <div className="horarios-grid">
-            <div className="horario-card">
-              <h3>📞 Atención Telefónica</h3>
-              <div className="horario-detalle">
-                <p><strong>Lunes a Viernes:</strong> 9:00 - 19:00</p>
-                <p><strong>Sábados:</strong> 9:00 - 17:00</p>
-                <p><strong>Domingos:</strong> 10:00 - 14:00</p>
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-[#1a365d] mb-12">Horarios de Atención</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <h3 className="text-xl font-bold text-[#1a365d] mb-4 text-center">📞 Atención Telefónica</h3>
+              <div className="space-y-2">
+                <p className="text-gray-700 text-sm"><strong className="text-[#1a365d] font-semibold">Lunes a Viernes:</strong> 9:00 - 19:00</p>
+                <p className="text-gray-700 text-sm"><strong className="text-[#1a365d] font-semibold">Sábados:</strong> 9:00 - 17:00</p>
+                <p className="text-gray-700 text-sm"><strong className="text-[#1a365d] font-semibold">Domingos:</strong> 10:00 - 14:00</p>
               </div>
             </div>
 
-            <div className="horario-card">
-              <h3>🏪 Showroom</h3>
-              <div className="horario-detalle">
-                <p><strong>Lunes a Viernes:</strong> 9:00 - 19:00</p>
-                <p><strong>Sábados:</strong> 9:00 - 17:00</p>
-                <p><strong>Domingos:</strong> Cerrado</p>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <h3 className="text-xl font-bold text-[#1a365d] mb-4 text-center">🏪 Showroom</h3>
+              <div className="space-y-2">
+                <p className="text-gray-700 text-sm"><strong className="text-[#1a365d] font-semibold">Lunes a Viernes:</strong> 9:00 - 19:00</p>
+                <p className="text-gray-700 text-sm"><strong className="text-[#1a365d] font-semibold">Sábados:</strong> 9:00 - 17:00</p>
+                <p className="text-gray-700 text-sm"><strong className="text-[#1a365d] font-semibold">Domingos:</strong> Cerrado</p>
               </div>
             </div>
 
-            <div className="horario-card">
-              <h3>🔧 Servicio Técnico</h3>
-              <div className="horario-detalle">
-                <p><strong>Lunes a Viernes:</strong> 8:00 - 18:00</p>
-                <p><strong>Sábados:</strong> 8:00 - 13:00</p>
-                <p><strong>Domingos:</strong> Cerrado</p>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <h3 className="text-xl font-bold text-[#1a365d] mb-4 text-center">🔧 Servicio Técnico</h3>
+              <div className="space-y-2">
+                <p className="text-gray-700 text-sm"><strong className="text-[#1a365d] font-semibold">Lunes a Viernes:</strong> 8:00 - 18:00</p>
+                <p className="text-gray-700 text-sm"><strong className="text-[#1a365d] font-semibold">Sábados:</strong> 8:00 - 13:00</p>
+                <p className="text-gray-700 text-sm"><strong className="text-[#1a365d] font-semibold">Domingos:</strong> Cerrado</p>
               </div>
             </div>
 
-            <div className="horario-card">
-              <h3>💬 WhatsApp</h3>
-              <div className="horario-detalle">
-                <p><strong>Lunes a Sábado:</strong> 8:00 - 20:00</p>
-                <p><strong>Domingos:</strong> 10:00 - 18:00</p>
-                <p><strong>Emergencias:</strong> 24/7</p>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <h3 className="text-xl font-bold text-[#1a365d] mb-4 text-center">💬 WhatsApp</h3>
+              <div className="space-y-2">
+                <p className="text-gray-700 text-sm"><strong className="text-[#1a365d] font-semibold">Lunes a Sábado:</strong> 8:00 - 20:00</p>
+                <p className="text-gray-700 text-sm"><strong className="text-[#1a365d] font-semibold">Domingos:</strong> 10:00 - 18:00</p>
+                <p className="text-gray-700 text-sm"><strong className="text-[#1a365d] font-semibold">Emergencias:</strong> 24/7</p>
               </div>
             </div>
           </div>
@@ -237,39 +241,39 @@ const Contactanos = () => {
       </section>
 
       {/* Preguntas Frecuentes Rápidas */}
-      <section className="section">
-        <div className="container">
-          <h2 className="text-center">Consultas Frecuentes</h2>
-          <div className="faq-rapidas">
-            <div className="faq-item">
-              <h4>¿Hacen entrega a domicilio?</h4>
-              <p>Sí, entregamos tu vehículo en tu hogar u oficina sin costo adicional en la Región Metropolitana.</p>
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-[#1a365d] mb-12">Consultas Frecuentes</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <h4 className="text-lg font-bold text-[#1a365d] mb-3">¿Hacen entrega a domicilio?</h4>
+              <p className="text-gray-600">Sí, entregamos tu vehículo en tu hogar u oficina sin costo adicional en la Región Metropolitana.</p>
             </div>
-            <div className="faq-item">
-              <h4>¿Qué documentos necesito?</h4>
-              <p>RUT, Licencia de Conducir vigente, y comprobante de ingresos para el financiamiento.</p>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <h4 className="text-lg font-bold text-[#1a365d] mb-3">¿Qué documentos necesito?</h4>
+              <p className="text-gray-600">RUT, Licencia de Conducir vigente, y comprobante de ingresos para el financiamiento.</p>
             </div>
-            <div className="faq-item">
-              <h4>¿Aceptan vehículos en parte de pago?</h4>
-              <p>Sí, evaluamos tu vehículo actual y lo consideramos como parte de pago para tu nuevo auto.</p>
+            <div className="bg-white p-6 rounded-xl shadow-md">
+              <h4 className="text-lg font-bold text-[#1a365d] mb-3">¿Aceptan vehículos en parte de pago?</h4>
+              <p className="text-gray-600">Sí, evaluamos tu vehículo actual y lo consideramos como parte de pago para tu nuevo auto.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Emergencias */}
-      <section className="section bg-primary">
-        <div className="container">
-          <div className="emergencia-cta text-center">
-            <h2 style={{color: 'white'}}>¿Necesitas Ayuda Urgente?</h2>
-            <p style={{color: 'var(--light-gray)'}}>
+      <section className="py-20 bg-gradient-to-br from-[#1a365d] to-[#2d3748]">
+        <div className="container mx-auto px-4">
+          <div className="text-center text-white">
+            <h2 className="text-4xl font-bold mb-4">¿Necesitas Ayuda Urgente?</h2>
+            <p className="text-xl mb-8 text-gray-200">
               Para emergencias vehiculares las 24 horas, contacta nuestro servicio de asistencia.
             </p>
-            <div className="emergencia-actions">
-              <a href="tel:+562280028862" className="btn btn-secondary">
+            <div className="flex gap-4 justify-center flex-wrap">
+              <a href="tel:+562280028862" className="px-8 py-4 bg-white text-[#1a365d] rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block">
                 🚨 Asistencia 24/7
               </a>
-              <a href="https://wa.me/56922345678?text=Emergencia%20vehicular" className="btn" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/56922345678?text=Emergencia%20vehicular" className="px-8 py-4 bg-[#c53030] text-white rounded-lg font-semibold hover:bg-[#a02020] transition-colors inline-block" target="_blank" rel="noopener noreferrer">
                 💬 WhatsApp Urgente
               </a>
             </div>

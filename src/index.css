@@ -1,208 +1,109 @@
-/* Paleta de colores para Car Dealer Chileno */
-:root {
-  /* Colores principales */
-  --primary-color: #1a365d; /* Azul marino elegante */
-  --secondary-color: #c53030; /* Rojo chileno */
-  --accent-color: #ffd700; /* Dorado premium */
-  --light-blue: #4299e1; /* Azul claro */
-  
-  /* Grises y neutros */
-  --dark-gray: #2d3748;
-  --medium-gray: #4a5568;
-  --light-gray: #e2e8f0;
-  --white: #ffffff;
-  --background: #f7fafc;
-  
-  /* Tipografía */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
-  
-  /* Configuración general */
-  color: var(--dark-gray);
-  background-color: var(--background);
-  
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: inherit;
-  color: var(--dark-gray);
-  background-color: var(--background);
-  line-height: 1.6;
-}
-
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Tipografía */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--primary-color);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  color: var(--medium-gray);
-}
-
-/* Enlaces */
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--secondary-color);
-}
-
-/* Botones */
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: var(--primary-color);
-  color: var(--white);
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.btn-secondary {
-  background-color: var(--accent-color);
-  color: var(--dark-gray);
-}
-
-.btn-secondary:hover {
-  background-color: #e6c200;
-}
-
-/* Contenedores */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section {
-  padding: 4rem 0;
-}
-
-/* Cards */
-.card {
-  background: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Grid */
-.grid {
-  display: grid;
-  gap: 2rem;
-}
-
-.grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-/* Utilidades */
-.text-center {
-  text-align: center;
-}
-
-.text-primary {
-  color: var(--primary-color);
-}
-
-.text-secondary {
-  color: var(--secondary-color);
-}
-
-.bg-primary {
-  background-color: var(--primary-color);
-  color: var(--white);
-}
-
-.bg-light {
-  background-color: var(--light-gray);
-}
-
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
-.mb-3 { margin-bottom: 3rem; }
-
-.mt-1 { margin-top: 1rem; }
-.mt-2 { margin-top: 2rem; }
-.mt-3 { margin-top: 3rem; }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 15px;
+@layer base {
+  :root {
+    --primary-color: #1a365d;
+    --secondary-color: #c53030;
+    --accent-color: #ffd700;
+    --light-blue: #4299e1;
+    --dark-gray: #2d3748;
+    --medium-gray: #4a5568;
+    --light-gray: #e2e8f0;
+    --white: #ffffff;
+    --background: #f7fafc;
   }
-  
+
+  * {
+    @apply m-0 p-0 box-border;
+  }
+
+  body {
+    @apply font-sans text-[#2d3748] bg-[#f7fafc] leading-relaxed antialiased;
+  }
+
+  #root {
+    @apply min-h-screen flex flex-col;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-[#1a365d] font-bold leading-tight mb-4;
+  }
+
   h1 {
-    font-size: 2rem;
+    @apply text-4xl;
   }
-  
+
   h2 {
-    font-size: 1.5rem;
+    @apply text-3xl;
   }
-  
-  .section {
-    padding: 2rem 0;
+
+  h3 {
+    @apply text-2xl;
   }
-  
+
+  p {
+    @apply mb-4 text-[#4a5568];
+  }
+
+  a {
+    @apply text-[#1a365d] no-underline transition-colors duration-300;
+  }
+
+  a:hover {
+    @apply text-[#c53030];
+  }
+}
+
+@layer components {
   .btn {
-    width: 100%;
-    margin-bottom: 1rem;
+    @apply inline-block px-6 py-3 bg-[#1a365d] text-white border-none rounded-md text-base font-semibold text-center cursor-pointer transition-all duration-300;
+  }
+
+  .btn:hover {
+    @apply bg-[#c53030] -translate-y-0.5 shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-[#ffd700] text-[#2d3748];
+  }
+
+  .btn-secondary:hover {
+    @apply bg-[#e6c200];
+  }
+
+  .container {
+    @apply max-w-[1200px] mx-auto px-5;
+  }
+
+  .section {
+    @apply py-16;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md p-8 transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply -translate-y-1 shadow-2xl;
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    @apply text-[#1a365d];
+  }
+
+  .text-secondary {
+    @apply text-[#c53030];
+  }
+
+  .bg-primary {
+    @apply bg-[#1a365d] text-white;
+  }
+
+  .bg-light {
+    @apply bg-[#e2e8f0];
   }
 }

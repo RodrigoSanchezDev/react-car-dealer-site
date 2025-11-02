@@ -5,9 +5,12 @@
 [![React](https://img.shields.io/badge/React-19.1.1-61dafb?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-7.1.7-646cff?style=for-the-badge&logo=vite)](https://vitejs.dev/)
 [![React Router](https://img.shields.io/badge/React_Router-7.9.4-ca4245?style=for-the-badge&logo=react-router)](https://reactrouter.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](./LICENSE)
 
 **Plataforma web moderna y completamente funcional para la gestión y visualización de inventario de vehículos en un concesionario automotriz chileno.**
+
+✨ **Actualización:** Sistema completo de gestión de inventario con Context API, convertido a **Tailwind CSS puro** (utility-first) sin uso de @apply.
 
 [Demo en Vivo](https://rodrigosanchezdev.github.io/react-car-dealer-site/) • [Reportar Bug](https://github.com/RodrigoSanchezDev/react-car-dealer-site/issues) • [Solicitar Funcionalidad](https://github.com/RodrigoSanchezDev/react-car-dealer-site/issues)
 
@@ -40,16 +43,29 @@
 
 - ✅ Arquitectura de componentes reutilizables
 - ✅ Navegación con React Router
+- ✅ Gestión de estado global con Context API
+- ✅ Sistema completo de CRUD para inventario
+- ✅ **Diseño 100% Tailwind CSS (utility-first, sin @apply)**
+- ✅ Componentes sin CSS externo, todo inline con utilities
 - ✅ Diseño responsivo y mobile-first
 - ✅ Código limpio y bien documentado
 - ✅ Optimización de rendimiento
 - ✅ Experiencia de usuario fluida
 
-El sitio permite a los usuarios explorar un catálogo de vehículos, filtrar por características, conocer información institucional, ubicar sucursales y contactar al concesionario.
+El sitio permite a los usuarios explorar un catálogo de vehículos, filtrar por características, **gestionar el inventario completo**, conocer información institucional, ubicar sucursales y contactar al concesionario.
 
 ---
 
 ## ✨ Características Principales
+
+### 🎯 Sistema de Gestión de Inventario (Nuevo)
+- **Context API**: Estado global para gestión centralizada de vehículos
+- **Agregar Vehículos**: Formulario completo con validación de campos
+- **Inventario Completo**: Tabla interactiva con todos los vehículos
+- **Búsqueda y Filtros**: Sistema de búsqueda en tiempo real por marca, modelo y ubicación
+- **Eliminar Vehículos**: Gestión de inventario con confirmaciones
+- **Estadísticas Dinámicas**: Métricas en tiempo real del inventario
+- **Diseño Responsivo**: Interfaz optimizada para todos los dispositivos
 
 ### 🚘 Catálogo de Vehículos
 - **Visualización de Inventario**: Cards interactivas con información detallada de cada vehículo
@@ -84,9 +100,11 @@ El sitio permite a los usuarios explorar un catálogo de vehículos, filtrar por
 ### 💡 Funcionalidades Técnicas
 - **Navegación SPA**: Single Page Application con React Router
 - **Componentes Reutilizables**: Header, Footer, VehiculoCard
+- **Estado Global**: Context API para gestión de inventario
 - **Estado Local**: Gestión de filtros con React Hooks
 - **Utilidades**: Funciones helper para formato de precios y datos
 - **Diseño Responsivo**: Adaptable a móviles, tablets y desktop
+- **Validación de Formularios**: Validación en tiempo real con feedback visual
 
 ---
 
@@ -98,6 +116,7 @@ El sitio permite a los usuarios explorar un catálogo de vehículos, filtrar por
 | **React** | 19.1.1 | Librería de interfaces de usuario |
 | **Vite** | 7.1.7 | Build tool y dev server ultra-rápido |
 | **React Router DOM** | 7.9.4 | Enrutamiento y navegación |
+| **Tailwind CSS** | 3.x | Framework CSS utility-first |
 
 ### Desarrollo y Calidad
 | Herramienta | Versión | Propósito |
@@ -106,12 +125,22 @@ El sitio permite a los usuarios explorar un catálogo de vehículos, filtrar por
 | **@vitejs/plugin-react** | 5.0.4 | Plugin de Vite para React |
 | **eslint-plugin-react-hooks** | 5.2.0 | Reglas para React Hooks |
 | **eslint-plugin-react-refresh** | 0.4.22 | Fast Refresh en desarrollo |
+| **PostCSS** | Latest | Procesador CSS para Tailwind |
+| **Autoprefixer** | Latest | Prefijos CSS automáticos |
 
-### Lenguajes
+### Lenguajes y Estilos
 - **JavaScript (ES6+)**: Lógica de la aplicación
 - **JSX**: Sintaxis de componentes React
-- **CSS3**: Estilos y diseño responsivo
+- **Tailwind CSS**: Framework utility-first (sin @apply, solo clases)
 - **HTML5**: Estructura base
+
+**Arquitectura de Estilos:**
+- ✅ 100% Tailwind CSS utilities en `className`
+- ✅ Sin archivos CSS externos (eliminados)
+- ✅ Configuración personalizada en `tailwind.config.js`
+- ✅ Colores customizados (#1a365d, #c53030, #ffd700)
+- ✅ Responsive design con breakpoints estándar
+- ✅ Archivos CSS originales respaldados en `/backup/styles/`
 
 ---
 
@@ -122,30 +151,32 @@ react-car-dealer-site/
 │
 ├── public/                          # Archivos estáticos públicos
 │
+├── backup/                          # 🗂️ Archivos respaldados
+│   ├── pages/                       # Versiones antiguas de páginas
+│   ├── styles/                      # CSS originales (antes de Tailwind)
+│   ├── root-files/                  # Scripts de conversión
+│   └── README.md                    # Documentación del backup
+│
 ├── src/                             # Código fuente principal
 │   ├── assets/                      # Recursos (imágenes, iconos, etc.)
 │   │
 │   ├── components/                  # Componentes reutilizables
-│   │   ├── Header.jsx               # Navegación principal
-│   │   ├── Header.css
-│   │   ├── Footer.jsx               # Pie de página
-│   │   ├── Footer.css
-│   │   ├── VehiculoCard.jsx         # Card de vehículo
-│   │   └── VehiculoCard.css
+│   │   ├── Header.jsx               # Navegación (100% Tailwind)
+│   │   ├── Footer.jsx               # Pie de página (100% Tailwind)
+│   │   └── VehiculoCard.jsx         # Card de vehículo (100% Tailwind)
 │   │
-│   ├── pages/                       # Páginas/Vistas
+│   ├── context/                     # 🆕 Context API
+│   │   └── VehiculosContext.jsx     # Estado global de vehículos
+│   │
+│   ├── pages/                       # Páginas/Vistas (100% Tailwind)
 │   │   ├── Home.jsx                 # Página principal con catálogo
-│   │   ├── Home.css
+│   │   ├── AgregarVehiculo.jsx      # 🆕 Formulario de ingreso
+│   │   ├── InventarioVehiculos.jsx  # 🆕 Tabla de inventario
 │   │   ├── QuienesSomos.jsx         # Información institucional
-│   │   ├── QuienesSomos.css
 │   │   ├── NuestrasTiendas.jsx      # Ubicación de sucursales
-│   │   ├── NuestrasTiendas.css
 │   │   ├── Contactanos.jsx          # Formulario de contacto
-│   │   ├── Contactanos.css
 │   │   ├── ComoComprar.jsx          # Proceso de compra
-│   │   ├── ComoComprar.css
-│   │   ├── PreguntasFrecuentes.jsx  # FAQ
-│   │   └── PreguntasFrecuentes.css
+│   │   └── PreguntasFrecuentes.jsx  # FAQ
 │   │
 │   ├── data/                        # Datos de la aplicación
 │   │   └── vehiculos.js             # Inventario y sucursales
@@ -154,12 +185,14 @@ react-car-dealer-site/
 │   │   └── helpers.js               # Helpers generales
 │   │
 │   ├── App.jsx                      # Componente principal
-│   ├── App.css                      # Estilos globales de App
+│   ├── App.css                      # Estilos globales mínimos
 │   ├── main.jsx                     # Punto de entrada
-│   └── index.css                    # Estilos globales base
+│   └── index.css                    # Tailwind directives (@tailwind)
 │
 ├── eslint.config.js                 # Configuración ESLint
 ├── vite.config.js                   # Configuración Vite
+├── postcss.config.js                # 🔧 PostCSS (necesario para Tailwind)
+├── tailwind.config.js               # 🎨 Configuración Tailwind CSS
 ├── package.json                     # Dependencias y scripts
 ├── index.html                       # HTML base
 ├── LICENSE                          # Licencia MIT
@@ -168,20 +201,37 @@ react-car-dealer-site/
 
 ### 📂 Descripción de Directorios Clave
 
+#### `/backup` 🗂️
+Archivos respaldados durante la migración a Tailwind CSS:
+- **pages/**: 7 archivos `*_old.jsx` (versiones con CSS)
+- **styles/**: 3 archivos CSS originales (compatibility.css, pages.css, pages-extended.css)
+- **root-files/**: Scripts y documentación de conversión
+- **README.md**: Documentación del contenido del backup
+
+#### `/src/context` 🆕
+Gestión de estado global con Context API:
+- **VehiculosContext**: Provider para inventario de vehículos
+- Funciones: `agregarVehiculo`, `eliminarVehiculo`, `actualizarVehiculo`
+- Hook personalizado: `useVehiculos()`
+
 #### `/src/components`
-Componentes reutilizables que se utilizan en múltiples páginas:
-- **Header**: Barra de navegación con enlaces activos
-- **Footer**: Información de contacto y enlaces
-- **VehiculoCard**: Tarjeta de presentación de vehículos
+Componentes reutilizables **100% Tailwind CSS** (sin archivos .css):
+- **Header.jsx**: Barra de navegación con enlaces activos
+- **Footer.jsx**: Información de contacto y enlaces
+- **VehiculoCard.jsx**: Tarjeta de presentación de vehículos
 
 #### `/src/pages`
-Vistas completas correspondientes a cada ruta:
-- **Home**: Catálogo principal con filtros
-- **QuienesSomos**: Historia y valores
-- **NuestrasTiendas**: Sucursales y servicios
-- **Contactanos**: Formulario y canales de contacto
-- **ComoComprar**: Guía de compra
-- **PreguntasFrecuentes**: FAQ
+Vistas completas **100% Tailwind CSS** (sin archivos .css):
+- **Home.jsx**: Catálogo principal con filtros
+- **AgregarVehiculo.jsx**: 🆕 Formulario para ingresar nuevos vehículos
+- **InventarioVehiculos.jsx**: 🆕 Tabla completa con gestión de inventario
+- **QuienesSomos.jsx**: Historia y valores
+- **NuestrasTiendas.jsx**: Sucursales y servicios
+- **Contactanos.jsx**: Formulario y canales de contacto
+- **ComoComprar.jsx**: Guía de compra
+- **PreguntasFrecuentes.jsx**: FAQ
+
+Todas las páginas utilizan únicamente **utility classes de Tailwind** en los atributos `className`.
 
 #### `/src/data`
 Datos estructurados de la aplicación:
@@ -283,7 +333,88 @@ Ejecuta ESLint para analizar el código.
 
 ## 🎯 Funcionalidades Detalladas
 
-### 🏠 Página Principal (Home)
+### � Sistema de Gestión de Inventario
+
+#### Página Agregar Vehículo (`/agregar-vehiculo`)
+
+**Formulario Completo**
+Campos incluidos:
+- **Información Básica**:
+  - Marca* (campo obligatorio)
+  - Modelo* (campo obligatorio)
+  - Año* (validación de rango)
+  - Precio* en CLP (solo números positivos)
+
+- **Características Técnicas**:
+  - Combustible (Gasolina, Diésel, Híbrido, Eléctrico, GNV)
+  - Transmisión (Manual, Automática, CVT, Secuencial)
+  - Kilometraje (campo numérico)
+  - Color* (campo obligatorio)
+
+- **Ubicación y Detalles**:
+  - Ubicación (dropdown con ciudades)
+  - URL de Imagen (opcional, con imagen por defecto)
+  - Descripción* (textarea)
+  - Características (separadas por comas)
+
+**Características del Formulario**:
+- ✅ Validación en tiempo real
+- ✅ Mensajes de error personalizados
+- ✅ Feedback visual para campos inválidos
+- ✅ Botón de cancelar con confirmación
+- ✅ Redirección automática al inventario tras guardar
+- ✅ Diseño responsive
+
+#### Página Inventario (`/inventario`)
+
+**Tabla Completa de Vehículos**
+Columnas incluidas:
+- ID, Marca, Modelo, Año, Precio
+- Kilometraje, Combustible, Transmisión
+- Color, Ubicación, Acciones
+
+**Sistema de Búsqueda y Filtros**:
+- 🔍 Búsqueda en tiempo real (marca, modelo, ubicación)
+- 🏷️ Filtro por marca
+- 🔄 Botón de limpieza de filtros
+
+**Estadísticas Dinámicas**:
+- 📊 Total de vehículos en inventario
+- 📈 Resultados de búsqueda actual
+- 🏢 Cantidad de marcas disponibles
+
+**Gestión de Datos**:
+- 🗑️ Eliminar vehículos con confirmación
+- ➕ Botón para agregar nuevos vehículos
+- 📱 Tabla responsive con scroll horizontal
+
+**Características de UX**:
+- Formato de precio en CLP
+- Badges visuales para combustible y ubicación
+- Hover effects en filas
+- Mensaje cuando no hay resultados
+- Loading states
+
+#### Context API - VehiculosContext
+
+**Funcionalidades del Provider**:
+```javascript
+const {
+  vehiculos,           // Array de todos los vehículos
+  agregarVehiculo,     // Función para agregar
+  eliminarVehiculo,    // Función para eliminar
+  actualizarVehiculo   // Función para actualizar
+} = useVehiculos();
+```
+
+**Características**:
+- 🔄 Estado sincronizado en toda la app
+- 🆔 Generación automática de IDs únicos
+- 🎯 Hook personalizado `useVehiculos()`
+- ✅ Validación de contexto
+- 📦 Carga inicial de datos desde `vehiculos.js`
+
+### �🏠 Página Principal (Home)
 
 #### Hero Section
 - Banner principal con call-to-action
@@ -441,40 +572,64 @@ FAQ completo sobre:
 ### Flujo de Datos
 
 ```
-App.jsx (Router Principal)
+App.jsx (Router Principal + VehiculosProvider)
     │
-    ├── Header (Navegación)
-    │
-    ├── Routes
-    │   ├── Home
-    │   │   └── VehiculoCard (múltiples)
-    │   ├── QuienesSomos
-    │   ├── NuestrasTiendas
-    │   ├── Contactanos
-    │   ├── ComoComprar
-    │   └── PreguntasFrecuentes
-    │
-    └── Footer
+    ├── VehiculosContext.Provider (Estado Global)
+    │   │
+    │   ├── Header (Navegación)
+    │   │
+    │   ├── Routes
+    │   │   ├── Home (consume useVehiculos)
+    │   │   │   └── VehiculoCard (múltiples)
+    │   │   ├── AgregarVehiculo (consume useVehiculos) 🆕
+    │   │   ├── InventarioVehiculos (consume useVehiculos) 🆕
+    │   │   ├── QuienesSomos
+    │   │   ├── NuestrasTiendas
+    │   │   ├── Contactanos
+    │   │   ├── ComoComprar
+    │   │   └── PreguntasFrecuentes
+    │   │
+    │   └── Footer
 ```
 
 ### Componentes Principales
 
 #### `<App />`
-Componente raíz que configura el Router y estructura general.
+Componente raíz que configura el Router, estructura general y Provider de Context API.
 
 ```jsx
 function App() {
   return (
-    <Router>
-      <Header />
-      <main>
-        <Routes>
-          {/* Rutas */}
-        </Routes>
-      </main>
-      <Footer />
-    </Router>
+    <VehiculosProvider>
+      <Router>
+        <Header />
+        <main>
+          <Routes>
+            {/* Rutas */}
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </VehiculosProvider>
   );
+}
+```
+
+#### `<VehiculosProvider />` 🆕
+Provider de Context API para gestión global del inventario.
+
+**Funcionalidades**:
+- Mantiene el estado de todos los vehículos
+- Provee funciones de CRUD
+- Inicializa con datos de `vehiculos.js`
+
+**API Expuesta**:
+```jsx
+{
+  vehiculos: Array,
+  agregarVehiculo: Function,
+  eliminarVehiculo: Function,
+  actualizarVehiculo: Function
 }
 ```
 
@@ -498,6 +653,33 @@ Card reutilizable para mostrar información de vehículos.
   color, ubicacion, caracteristicas
 }
 ```
+
+#### `<AgregarVehiculo />` 🆕
+Componente de formulario para agregar nuevos vehículos al inventario.
+
+**Hooks Utilizados**:
+- `useState`: Gestión del estado del formulario y errores
+- `useVehiculos`: Acceso a la función `agregarVehiculo`
+- `useNavigate`: Redirección tras guardar
+
+**Características**:
+- Validación de campos en tiempo real
+- Mensajes de error personalizados
+- Confirmación antes de cancelar
+
+#### `<InventarioVehiculos />` 🆕
+Componente de tabla para visualizar y gestionar el inventario completo.
+
+**Hooks Utilizados**:
+- `useState`: Gestión de búsqueda y filtros
+- `useVehiculos`: Acceso a vehículos y función eliminar
+- `useNavigate`: Navegación a agregar vehículo
+
+**Características**:
+- Búsqueda en tiempo real
+- Filtros dinámicos
+- Estadísticas calculadas
+- Formateo de datos (precio, kilometraje)
 
 #### `<Footer />`
 Pie de página con información de contacto y enlaces.
@@ -585,12 +767,21 @@ Código del componente Home.jsx mostrando uso del hook useState para filtros din
 - [x] Sistema de filtros
 - [x] Diseño responsivo
 - [x] Datos estáticos
+- [x] **Context API para gestión de estado global** 🆕
+- [x] **Formulario completo para agregar vehículos** 🆕
+- [x] **Tabla de inventario con búsqueda y filtros** 🆕
+- [x] **Sistema CRUD básico (Crear, Leer, Eliminar)** 🆕
+- [x] **Migración completa a Tailwind CSS puro** ✨
+- [x] **Eliminación de archivos CSS (respaldados en /backup/)** ✨
+- [x] **Configuración personalizada de Tailwind** ✨
 
 ### 🚧 Fase 2 - En Planificación (v1.1.0)
 - [ ] Integración con backend (API REST)
 - [ ] Sistema de autenticación
 - [ ] Panel de administración
-- [ ] Gestión dinámica de inventario
+- [ ] Gestión dinámica de inventario con base de datos
+- [ ] **Función de editar vehículos existentes**
+- [ ] **Persistencia de datos con localStorage**
 - [ ] Sistema de favoritos
 - [ ] Comparador de vehículos
 
@@ -613,6 +804,8 @@ Código del componente Home.jsx mostrando uso del hook useState para filtros din
 - [ ] Accesibilidad (WCAG 2.1)
 - [ ] Internacionalización (i18n)
 - [ ] Análisis con Google Analytics
+- [x] **Migración a Tailwind CSS puro** ✅
+- [x] **Sistema de respaldo de archivos** ✅
 
 ---
 
@@ -669,6 +862,8 @@ git commit -m "docs: update installation instructions"
 - Nombres descriptivos en español para variables de negocio
 - Comentarios en español
 - PropTypes o TypeScript (futuro)
+- **Solo Tailwind CSS utilities (sin archivos CSS ni @apply)**
+- **Clases organizadas: layout → spacing → colors → typography → effects**
 
 ### Reportar Bugs
 

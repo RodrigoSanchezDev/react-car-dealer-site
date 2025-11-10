@@ -1,6 +1,11 @@
+import { useState } from 'react';
 import { formatearPrecio, formatearKilometraje } from '../data/vehiculos';
+import VehiculoModal from './VehiculoModal';
+import { usePosiblesCompras } from '../context/PosiblesComprasContext';
 
-const VehiculoCard = ({ vehiculo }) => {
+const VehiculoCard = ({ vehiculo, showEliminar, onEliminar, showPosibleCompra = false, enCarrito = false }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { agregarAPosibleCompra, removerDePosibleCompra, esPosibleCompra } = usePosiblesCompras();
   const {
     marca,
     modelo,
@@ -14,6 +19,16 @@ const VehiculoCard = ({ vehiculo }) => {
     ubicacion,
     caracteristicas
   } = vehiculo;
+
+  const yaEnPosibleCompra = esPosibleCompra(vehiculo.id);
+
+  const handleTogglePosibleCompra = () => {
+    if (yaEnPosibleCompra) {
+      removerDePosibleCompra(vehiculo.id);
+    } else {
+      agregarAPosibleCompra(vehiculo);
+    }
+  };
 
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
@@ -68,15 +83,59 @@ const VehiculoCard = ({ vehiculo }) => {
           ))}
         </div>
         
-        <div className="flex gap-3">
-          <button className="flex-1 bg-[#1a365d] text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-[#c53030] transition-colors duration-300">
+        <div className="flex flex-col gap-3">
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="w-full bg-[#1a365d] text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-[#c53030] transition-colors duration-300"
+          >
             Ver Detalles
           </button>
-          <button className="flex-1 bg-[#ffd700] text-[#2d3748] py-2.5 px-4 rounded-lg font-semibold hover:bg-[#e6c200] transition-colors duration-300">
-            📞 Contactar
-          </button>
+          
+          <div className="flex gap-3">
+            {showEliminar ? (
+              <button 
+                onClick={() => onEliminar(vehiculo.id, vehiculo.marca, vehiculo.modelo)}
+                className="flex-1 bg-red-500 text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300"
+              >
+                🗑️ Eliminar
+              </button>
+            ) : (
+              <button className="flex-1 bg-[#ffd700] text-[#2d3748] py-2.5 px-4 rounded-lg font-semibold hover:bg-[#e6c200] transition-colors duration-300">
+                📞 Contactar
+              </button>
+            )}
+            
+            {showPosibleCompra && (
+              <button 
+                onClick={handleTogglePosibleCompra}
+                className={`flex-1 py-2.5 px-4 rounded-lg font-semibold transition-colors duration-300 ${
+                  yaEnPosibleCompra 
+                    ? 'bg-green-500 text-white hover:bg-green-600' 
+                    : 'bg-blue-500 text-white hover:bg-blue-600'
+                }`}
+              >
+                {yaEnPosibleCompra ? '✓ En Lista' : '⭐ Posible Compra'}
+              </button>
+            )}
+            
+            {enCarrito && (
+              <button 
+                onClick={handleTogglePosibleCompra}
+                className="flex-1 bg-orange-500 text-white py-2.5 px-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-300"
+              >
+                ✕ Remover
+              </button>
+            )}
+          </div>
         </div>
       </div>
+
+      {/* Modal */}
+      <VehiculoModal 
+        vehiculo={vehiculo} 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </div>
   );
 };

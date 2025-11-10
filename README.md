@@ -10,7 +10,7 @@
 
 **Plataforma web moderna y completamente funcional para la gestión y visualización de inventario de vehículos en un concesionario automotriz chileno.**
 
-✨ **Actualización:** Sistema completo de gestión de inventario con Context API, convertido a **Tailwind CSS puro** (utility-first) sin uso de @apply.
+✨ **Actualización v2.0:** Sistema completo de gestión de inventario con Context API, **Modal de Ficha Técnica**, **Sistema de Posibles Compras** (Lista de Deseos), **Filtros Avanzados**, y diseño 100% **Tailwind CSS puro** (utility-first) sin uso de @apply.
 
 [Demo en Vivo](https://rodrigosanchezdev.github.io/react-car-dealer-site/) • [Reportar Bug](https://github.com/RodrigoSanchezDev/react-car-dealer-site/issues) • [Solicitar Funcionalidad](https://github.com/RodrigoSanchezDev/react-car-dealer-site/issues)
 
@@ -58,14 +58,30 @@ El sitio permite a los usuarios explorar un catálogo de vehículos, filtrar por
 
 ## ✨ Características Principales
 
-### 🎯 Sistema de Gestión de Inventario (Nuevo)
-- **Context API**: Estado global para gestión centralizada de vehículos
-- **Agregar Vehículos**: Formulario completo con validación de campos
-- **Inventario Completo**: Tabla interactiva con todos los vehículos
-- **Búsqueda y Filtros**: Sistema de búsqueda en tiempo real por marca, modelo y ubicación
-- **Eliminar Vehículos**: Gestión de inventario con confirmaciones
+### 🎯 Sistema de Gestión de Inventario
+- **Context API Dual**: Estado global para vehículos y posibles compras
+- **Agregar Vehículos**: Formulario completo con ficha técnica detallada
+- **Inventario Completo**: Grid de cards con búsqueda avanzada
+- **Filtros Avanzados**: 6 criterios de búsqueda (marca, modelo, año, precio)
+- **Eliminar Vehículos**: Gestión con confirmaciones de seguridad
 - **Estadísticas Dinámicas**: Métricas en tiempo real del inventario
-- **Diseño Responsivo**: Interfaz optimizada para todos los dispositivos
+- **Diseño Responsivo**: Grid adaptativo (2-3 columnas)
+
+### 🛒 Sistema de Posibles Compras (Lista de Deseos) 🆕
+- **Icono Flotante**: Badge con contador en esquina inferior derecha
+- **Popup Interactivo**: Click para abrir/cerrar con preview de vehículos
+- **Página Dedicada**: Vista completa con estadísticas y gestión
+- **Persistencia**: Datos guardados en localStorage
+- **Sincronización**: Vehículos marcados desaparecen del inventario
+- **Gestión Completa**: Agregar, remover individual o limpiar todo
+
+### 🚗 Modal de Ficha Técnica 🆕
+- **Portal Rendering**: Modal sobre toda la pantalla sin interferencias
+- **Información Completa**: 15+ campos técnicos por vehículo
+- **Diseño Atractivo**: Imagen grande, especificaciones organizadas
+- **Datos Técnicos**: Motor, potencia, consumo, dimensiones, etc.
+- **Características**: Badges con features destacadas
+- **CTA**: Botones de contacto integrados
 
 ### 🚘 Catálogo de Vehículos
 - **Visualización de Inventario**: Cards interactivas con información detallada de cada vehículo
@@ -163,15 +179,19 @@ react-car-dealer-site/
 │   ├── components/                  # Componentes reutilizables
 │   │   ├── Header.jsx               # Navegación (100% Tailwind)
 │   │   ├── Footer.jsx               # Pie de página (100% Tailwind)
-│   │   └── VehiculoCard.jsx         # Card de vehículo (100% Tailwind)
+│   │   ├── VehiculoCard.jsx         # Card de vehículo (100% Tailwind)
+│   │   ├── VehiculoModal.jsx        # 🆕 Modal de ficha técnica
+│   │   └── IconoPosiblesCompras.jsx # 🆕 Icono flotante con popup
 │   │
-│   ├── context/                     # 🆕 Context API
-│   │   └── VehiculosContext.jsx     # Estado global de vehículos
+│   ├── context/                     # Context API
+│   │   ├── VehiculosContext.jsx     # Estado global de vehículos
+│   │   └── PosiblesComprasContext.jsx # 🆕 Estado de lista de deseos
 │   │
 │   ├── pages/                       # Páginas/Vistas (100% Tailwind)
 │   │   ├── Home.jsx                 # Página principal con catálogo
-│   │   ├── AgregarVehiculo.jsx      # 🆕 Formulario de ingreso
-│   │   ├── InventarioVehiculos.jsx  # 🆕 Tabla de inventario
+│   │   ├── AgregarVehiculo.jsx      # Formulario con ficha técnica
+│   │   ├── InventarioVehiculos.jsx  # Grid con filtros avanzados
+│   │   ├── CarritoPosiblesCompras.jsx # 🆕 Página de lista de deseos
 │   │   ├── QuienesSomos.jsx         # Información institucional
 │   │   ├── NuestrasTiendas.jsx      # Ubicación de sucursales
 │   │   ├── Contactanos.jsx          # Formulario de contacto
@@ -759,31 +779,39 @@ Código del componente Home.jsx mostrando uso del hook useState para filtros din
 
 ## 🗺️ Roadmap
 
-### ✅ Fase 1 - Completado (v1.0.0)
+### ✅ Fase 1 - Completado (v2.0.0)
 - [x] Estructura base con React + Vite
 - [x] Navegación con React Router
 - [x] Componentes principales (Header, Footer, VehiculoCard)
 - [x] Páginas institucionales
-- [x] Sistema de filtros
+- [x] Sistema de filtros básico
 - [x] Diseño responsivo
-- [x] Datos estáticos
-- [x] **Context API para gestión de estado global** 🆕
-- [x] **Formulario completo para agregar vehículos** 🆕
-- [x] **Tabla de inventario con búsqueda y filtros** 🆕
-- [x] **Sistema CRUD básico (Crear, Leer, Eliminar)** 🆕
+- [x] Datos estáticos iniciales
+- [x] **Context API para gestión de estado global**
+- [x] **Formulario completo con ficha técnica detallada**
+- [x] **Grid de inventario con cards**
+- [x] **Filtros avanzados (6 criterios: marca, modelo, años, precios)**
+- [x] **Sistema CRUD básico (Crear, Leer, Eliminar)**
+- [x] **Modal de ficha técnica con Portal** 🆕
+- [x] **Sistema de Posibles Compras completo** 🆕
+- [x] **Icono flotante con popup interactivo** 🆕
+- [x] **Página dedicada para lista de deseos** 🆕
+- [x] **Persistencia en localStorage** 🆕
+- [x] **Sincronización entre inventario y carrito** 🆕
 - [x] **Migración completa a Tailwind CSS puro** ✨
 - [x] **Eliminación de archivos CSS (respaldados en /backup/)** ✨
 - [x] **Configuración personalizada de Tailwind** ✨
 
-### 🚧 Fase 2 - En Planificación (v1.1.0)
+### 🚧 Fase 2 - En Planificación (v2.1.0)
 - [ ] Integración con backend (API REST)
 - [ ] Sistema de autenticación
 - [ ] Panel de administración
 - [ ] Gestión dinámica de inventario con base de datos
 - [ ] **Función de editar vehículos existentes**
-- [ ] **Persistencia de datos con localStorage**
-- [ ] Sistema de favoritos
-- [ ] Comparador de vehículos
+- [ ] **Exportar lista de posibles compras (PDF)**
+- [ ] **Compartir posibles compras por email**
+- [ ] Comparador de vehículos (lado a lado)
+- [ ] Historial de vehículos vistos
 
 ### 🔮 Fase 3 - Futuro (v2.0.0)
 - [ ] Sistema de reservas online

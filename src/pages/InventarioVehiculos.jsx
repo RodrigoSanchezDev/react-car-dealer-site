@@ -1,27 +1,52 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useVehiculos } from '../context/VehiculosContext';
-import { formatearPrecio, formatearKilometraje } from '../data/vehiculos';
+import { usePosiblesCompras } from '../context/PosiblesComprasContext';
+import VehiculoCard from '../components/VehiculoCard';
 
 const InventarioVehiculos = () => {
   const navigate = useNavigate();
   const { vehiculos, eliminarVehiculo } = useVehiculos();
+  const { posiblesCompras } = usePosiblesCompras();
   const [busqueda, setBusqueda] = useState('');
-  const [filtroMarca, setFiltroMarca] = useState('');
+  const [filtros, setFiltros] = useState({
+    marca: '',
+    modelo: '',
+    añoMin: '',
+    añoMax: '',
+    precioMin: '',
+    precioMax: ''
+  });
 
-  // Obtener marcas únicas
+  // Obtener valores únicos para los filtros
   const marcasUnicas = [...new Set(vehiculos.map(v => v.marca))].sort();
+  const modelosUnicos = [...new Set(vehiculos.map(v => v.modelo))].sort();
+  const añosUnicos = [...new Set(vehiculos.map(v => v.año))].sort((a, b) => b - a);
 
-  // Filtrar vehículos
+  // Obtener IDs de posibles compras para filtrarlos
+  const idsPosiblesCompras = posiblesCompras.map(v => v.id);
+
+  // Filtrar vehículos (excluir los que están en posibles compras)
   const vehiculosFiltrados = vehiculos.filter(vehiculo => {
+    // Excluir vehículos que ya están en posibles compras
+    if (idsPosiblesCompras.includes(vehiculo.id)) {
+      return false;
+    }
     const cumpleBusqueda = 
       vehiculo.marca.toLowerCase().includes(busqueda.toLowerCase()) ||
       vehiculo.modelo.toLowerCase().includes(busqueda.toLowerCase()) ||
       vehiculo.ubicacion.toLowerCase().includes(busqueda.toLowerCase());
     
-    const cumpleMarca = !filtroMarca || vehiculo.marca === filtroMarca;
+    const cumpleMarca = !filtros.marca || vehiculo.marca === filtros.marca;
+    const cumpleModelo = !filtros.modelo || vehiculo.modelo === filtros.modelo;
     
-    return cumpleBusqueda && cumpleMarca;
+    const cumpleAñoMin = !filtros.añoMin || vehiculo.año >= parseInt(filtros.añoMin);
+    const cumpleAñoMax = !filtros.añoMax || vehiculo.año <= parseInt(filtros.añoMax);
+    
+    const cumplePrecioMin = !filtros.precioMin || vehiculo.precio >= parseInt(filtros.precioMin);
+    const cumplePrecioMax = !filtros.precioMax || vehiculo.precio <= parseInt(filtros.precioMax);
+    
+    return cumpleBusqueda && cumpleMarca && cumpleModelo && cumpleAñoMin && cumpleAñoMax && cumplePrecioMin && cumplePrecioMax;
   });
 
   const handleEliminar = (id, marca, modelo) => {
@@ -32,6 +57,25 @@ const InventarioVehiculos = () => {
 
   const handleAgregarNuevo = () => {
     navigate('/agregar-vehiculo');
+  };
+
+  const handleFiltroChange = (campo, valor) => {
+    setFiltros(prev => ({
+      ...prev,
+      [campo]: valor
+    }));
+  };
+
+  const limpiarFiltros = () => {
+    setBusqueda('');
+    setFiltros({
+      marca: '',
+      modelo: '',
+      añoMin: '',
+      añoMax: '',
+      precioMin: '',
+      precioMax: ''
+    });
   };
 
   return (
@@ -53,39 +97,116 @@ const InventarioVehiculos = () => {
 
         {/* Controles de filtrado y búsqueda */}
         <div className="bg-white rounded-xl shadow-md p-6 mb-8">
-          <div className="grid md:grid-cols-2 gap-4 mb-4">
+          <h3 className="text-xl font-bold text-[#1a365d] mb-4">Filtros de Búsqueda</h3>
+          
+          {/* Búsqueda general */}
+          <div className="mb-6">
+            <input
+              type="text"
+              placeholder="🔍 Buscar por marca, modelo o ubicación..."
+              value={busqueda}
+              onChange={(e) => setBusqueda(e.target.value)}
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+            />
+          </div>
+
+          {/* Filtros específicos */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+            {/* Marca */}
             <div>
-              <input
-                type="text"
-                placeholder="🔍 Buscar por marca, modelo o ubicación..."
-                value={busqueda}
-                onChange={(e) => setBusqueda(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
-              />
-            </div>
-            
-            <div className="flex gap-3">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Marca</label>
               <select
-                value={filtroMarca}
-                onChange={(e) => setFiltroMarca(e.target.value)}
-                className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                value={filtros.marca}
+                onChange={(e) => handleFiltroChange('marca', e.target.value)}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
               >
                 <option value="">Todas las marcas</option>
                 {marcasUnicas.map(marca => (
                   <option key={marca} value={marca}>{marca}</option>
                 ))}
               </select>
-
-              <button
-                onClick={() => {
-                  setBusqueda('');
-                  setFiltroMarca('');
-                }}
-                className="px-6 py-3 bg-gray-500 text-white rounded-lg font-semibold hover:bg-gray-600 transition-colors whitespace-nowrap"
-              >
-                Limpiar Filtros
-              </button>
             </div>
+
+            {/* Modelo */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Modelo</label>
+              <select
+                value={filtros.modelo}
+                onChange={(e) => handleFiltroChange('modelo', e.target.value)}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+              >
+                <option value="">Todos los modelos</option>
+                {modelosUnicos.map(modelo => (
+                  <option key={modelo} value={modelo}>{modelo}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* Año Mínimo */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Año Mínimo</label>
+              <select
+                value={filtros.añoMin}
+                onChange={(e) => handleFiltroChange('añoMin', e.target.value)}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+              >
+                <option value="">Sin mínimo</option>
+                {añosUnicos.map(año => (
+                  <option key={`min-${año}`} value={año}>{año}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* Año Máximo */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Año Máximo</label>
+              <select
+                value={filtros.añoMax}
+                onChange={(e) => handleFiltroChange('añoMax', e.target.value)}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+              >
+                <option value="">Sin máximo</option>
+                {añosUnicos.map(año => (
+                  <option key={`max-${año}`} value={año}>{año}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* Precio Mínimo */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Precio Mínimo (CLP)</label>
+              <input
+                type="number"
+                placeholder="Ej: 10000000"
+                value={filtros.precioMin}
+                onChange={(e) => handleFiltroChange('precioMin', e.target.value)}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                min="0"
+              />
+            </div>
+
+            {/* Precio Máximo */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Precio Máximo (CLP)</label>
+              <input
+                type="number"
+                placeholder="Ej: 30000000"
+                value={filtros.precioMax}
+                onChange={(e) => handleFiltroChange('precioMax', e.target.value)}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                min="0"
+              />
+            </div>
+          </div>
+
+          {/* Botón Limpiar */}
+          <div className="flex justify-end">
+            <button
+              onClick={limpiarFiltros}
+              className="px-8 py-3 bg-gray-500 text-white rounded-lg font-semibold hover:bg-gray-600 transition-colors flex items-center gap-2"
+            >
+              🔄 Limpiar Filtros
+            </button>
           </div>
         </div>
 
@@ -105,7 +226,7 @@ const InventarioVehiculos = () => {
           </div>
         </div>
 
-        {/* Tabla de vehículos */}
+        {/* Grid de vehículos con cards */}
         {vehiculosFiltrados.length === 0 ? (
           <div className="bg-white rounded-xl shadow-md p-12 text-center">
             <h3 className="text-2xl font-bold text-[#1a365d] mb-4">No se encontraron vehículos</h3>
@@ -124,59 +245,16 @@ const InventarioVehiculos = () => {
             )}
           </div>
         ) : (
-          <div className="bg-white rounded-xl shadow-md overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-[#1a365d] text-white">
-                  <tr>
-                    <th className="px-4 py-4 text-left text-sm font-semibold">ID</th>
-                    <th className="px-4 py-4 text-left text-sm font-semibold">Marca</th>
-                    <th className="px-4 py-4 text-left text-sm font-semibold">Modelo</th>
-                    <th className="px-4 py-4 text-left text-sm font-semibold">Año</th>
-                    <th className="px-4 py-4 text-left text-sm font-semibold">Precio</th>
-                    <th className="px-4 py-4 text-left text-sm font-semibold">Kilometraje</th>
-                    <th className="px-4 py-4 text-left text-sm font-semibold">Combustible</th>
-                    <th className="px-4 py-4 text-left text-sm font-semibold">Transmisión</th>
-                    <th className="px-4 py-4 text-left text-sm font-semibold">Color</th>
-                    <th className="px-4 py-4 text-left text-sm font-semibold">Ubicación</th>
-                    <th className="px-4 py-4 text-center text-sm font-semibold">Acciones</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  {vehiculosFiltrados.map(vehiculo => (
-                    <tr key={vehiculo.id} className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 text-sm text-gray-700">{vehiculo.id}</td>
-                      <td className="px-4 py-4 text-sm font-semibold text-[#1a365d]">{vehiculo.marca}</td>
-                      <td className="px-4 py-4 text-sm text-gray-700">{vehiculo.modelo}</td>
-                      <td className="px-4 py-4 text-sm text-gray-700">{vehiculo.año}</td>
-                      <td className="px-4 py-4 text-sm font-bold text-[#c53030]">{formatearPrecio(vehiculo.precio)}</td>
-                      <td className="px-4 py-4 text-sm text-gray-700">{formatearKilometraje(vehiculo.kilometraje)}</td>
-                      <td className="px-4 py-4">
-                        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">
-                          {vehiculo.combustible}
-                        </span>
-                      </td>
-                      <td className="px-4 py-4 text-sm text-gray-700">{vehiculo.transmision}</td>
-                      <td className="px-4 py-4 text-sm text-gray-700">{vehiculo.color}</td>
-                      <td className="px-4 py-4">
-                        <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full">
-                          📍 {vehiculo.ubicacion}
-                        </span>
-                      </td>
-                      <td className="px-4 py-4 text-center">
-                        <button
-                          onClick={() => handleEliminar(vehiculo.id, vehiculo.marca, vehiculo.modelo)}
-                          className="inline-flex items-center justify-center w-10 h-10 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
-                          title="Eliminar vehículo"
-                        >
-                          🗑️
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {vehiculosFiltrados.map(vehiculo => (
+              <VehiculoCard 
+                key={vehiculo.id} 
+                vehiculo={vehiculo} 
+                showEliminar={true}
+                onEliminar={handleEliminar}
+                showPosibleCompra={true}
+              />
+            ))}
           </div>
         )}
       </div>

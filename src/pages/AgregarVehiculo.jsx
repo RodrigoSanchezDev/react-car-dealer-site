@@ -18,7 +18,23 @@ const AgregarVehiculo = () => {
     color: '',
     ubicacion: 'Santiago',
     descripcion: '',
-    caracteristicas: ''
+    caracteristicas: '',
+    // Ficha Técnica
+    motor: '',
+    potencia: '',
+    torque: '',
+    cilindros: '',
+    consumoCombinado: '',
+    consumoCiudad: '',
+    consumoCarretera: '',
+    traccion: 'Delantera',
+    capacidadEstanque: '',
+    aceleracion0a100: '',
+    velocidadMaxima: '',
+    dimensiones: '',
+    peso: '',
+    capacidadMaletero: '',
+    pasajeros: '5'
   });
 
   const [errores, setErrores] = useState({});
@@ -79,12 +95,35 @@ const AgregarVehiculo = () => {
 
     // Preparar datos del vehículo
     const nuevoVehiculo = {
-      ...formData,
-      precio: parseInt(formData.precio),
+      marca: formData.marca,
+      modelo: formData.modelo,
       año: parseInt(formData.año),
+      precio: parseInt(formData.precio),
+      imagen: formData.imagen || 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=400&h=300&fit=crop',
+      combustible: formData.combustible,
+      transmision: formData.transmision,
       kilometraje: parseInt(formData.kilometraje),
+      color: formData.color,
+      ubicacion: formData.ubicacion,
+      descripcion: formData.descripcion,
       caracteristicas: caracteristicasArray.length > 0 ? caracteristicasArray : ['Características por definir'],
-      imagen: formData.imagen || 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=400&h=300&fit=crop'
+      fichaTecnica: {
+        motor: formData.motor || 'N/A',
+        potencia: formData.potencia || 'N/A',
+        torque: formData.torque || 'N/A',
+        cilindros: formData.cilindros || 'N/A',
+        consumoCombinado: formData.consumoCombinado || 'N/A',
+        consumoCiudad: formData.consumoCiudad || 'N/A',
+        consumoCarretera: formData.consumoCarretera || 'N/A',
+        traccion: formData.traccion,
+        capacidadEstanque: formData.capacidadEstanque || 'N/A',
+        aceleracion0a100: formData.aceleracion0a100 || 'N/A',
+        velocidadMaxima: formData.velocidadMaxima || 'N/A',
+        dimensiones: formData.dimensiones || 'N/A',
+        peso: formData.peso || 'N/A',
+        capacidadMaletero: formData.capacidadMaletero || 'N/A',
+        pasajeros: formData.pasajeros + ' personas'
+      }
     };
 
     // Agregar vehículo al inventario
@@ -293,6 +332,258 @@ const AgregarVehiculo = () => {
                   {errores.color && (
                     <span className="text-red-500 text-sm mt-1 block">{errores.color}</span>
                   )}
+                </div>
+              </div>
+            </div>
+
+            {/* Ficha Técnica Detallada */}
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold text-[#1a365d] border-b-2 border-gray-200 pb-2">Ficha Técnica Detallada</h2>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="motor" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Motor
+                  </label>
+                  <input
+                    type="text"
+                    id="motor"
+                    name="motor"
+                    value={formData.motor}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 1.8L Híbrido, 2.0L Turbo"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="potencia" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Potencia
+                  </label>
+                  <input
+                    type="text"
+                    id="potencia"
+                    name="potencia"
+                    value={formData.potencia}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 150 HP"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="torque" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Torque
+                  </label>
+                  <input
+                    type="text"
+                    id="torque"
+                    name="torque"
+                    value={formData.torque}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 180 Nm"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="cilindros" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Cilindros
+                  </label>
+                  <input
+                    type="text"
+                    id="cilindros"
+                    name="cilindros"
+                    value={formData.cilindros}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 4 en línea"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                <div>
+                  <label htmlFor="consumoCombinado" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Consumo Combinado
+                  </label>
+                  <input
+                    type="text"
+                    id="consumoCombinado"
+                    name="consumoCombinado"
+                    value={formData.consumoCombinado}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 6.5 L/100km"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="consumoCiudad" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Consumo Ciudad
+                  </label>
+                  <input
+                    type="text"
+                    id="consumoCiudad"
+                    name="consumoCiudad"
+                    value={formData.consumoCiudad}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 7.5 L/100km"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="consumoCarretera" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Consumo Carretera
+                  </label>
+                  <input
+                    type="text"
+                    id="consumoCarretera"
+                    name="consumoCarretera"
+                    value={formData.consumoCarretera}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 5.5 L/100km"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="traccion" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Tracción
+                  </label>
+                  <select
+                    id="traccion"
+                    name="traccion"
+                    value={formData.traccion}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                  >
+                    <option value="Delantera">Delantera</option>
+                    <option value="Trasera">Trasera</option>
+                    <option value="4WD">4WD</option>
+                    <option value="AWD">AWD</option>
+                    <option value="4x4 ALLGRIP">4x4 ALLGRIP</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="capacidadEstanque" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Capacidad Estanque
+                  </label>
+                  <input
+                    type="text"
+                    id="capacidadEstanque"
+                    name="capacidadEstanque"
+                    value={formData.capacidadEstanque}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 50 litros"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="aceleracion0a100" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Aceleración 0-100 km/h
+                  </label>
+                  <input
+                    type="text"
+                    id="aceleracion0a100"
+                    name="aceleracion0a100"
+                    value={formData.aceleracion0a100}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 10.5 segundos"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="velocidadMaxima" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Velocidad Máxima
+                  </label>
+                  <input
+                    type="text"
+                    id="velocidadMaxima"
+                    name="velocidadMaxima"
+                    value={formData.velocidadMaxima}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 180 km/h"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="dimensiones" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Dimensiones (L x A x Al)
+                  </label>
+                  <input
+                    type="text"
+                    id="dimensiones"
+                    name="dimensiones"
+                    value={formData.dimensiones}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 4,630 x 1,780 x 1,435 mm"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="peso" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Peso
+                  </label>
+                  <input
+                    type="text"
+                    id="peso"
+                    name="peso"
+                    value={formData.peso}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 1,395 kg"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="capacidadMaletero" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Capacidad Maletero
+                  </label>
+                  <input
+                    type="text"
+                    id="capacidadMaletero"
+                    name="capacidadMaletero"
+                    value={formData.capacidadMaletero}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                    placeholder="Ej: 470 litros"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="pasajeros" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Pasajeros
+                  </label>
+                  <select
+                    id="pasajeros"
+                    name="pasajeros"
+                    value={formData.pasajeros}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#1a365d] transition-colors"
+                  >
+                    <option value="2">2 personas</option>
+                    <option value="4">4 personas</option>
+                    <option value="5">5 personas</option>
+                    <option value="7">7 personas</option>
+                    <option value="8">8 personas</option>
+                  </select>
                 </div>
               </div>
             </div>
